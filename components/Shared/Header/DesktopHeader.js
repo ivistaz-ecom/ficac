@@ -101,7 +101,7 @@ const DesktopHeader = () => {
 
   return (
     <>
-      <Container fluid className=" position-absolute pt-5 d-lg-flex d-none">
+      <Container fluid className="position-absolute pt-5 d-lg-flex d-none">
         <Container
           className="d-flex flex-column justify-content-center"
           style={{ height: "75px" }}
@@ -305,10 +305,10 @@ const DesktopHeader = () => {
                 </div>
 
                 {/* menu icon  */}
-                <div className="cursor-pointer mb-0 p-0 text-white  " onClick={toggleMenuClick} style={{cursor:"pointer"}}>
-                
+                <div className="cursor-pointer mb-0 p-0 text-white  " onClick={toggleMenuClick} style={{ cursor: "pointer" }}>
+
                   <i class="bi bi-list fs-3 "></i>
-            
+
                 </div>
               </div>
             </Col>

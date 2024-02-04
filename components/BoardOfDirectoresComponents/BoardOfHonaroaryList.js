@@ -39,19 +39,21 @@ const BoardOfHonoraryList = () => {
   return (
     <>
       <Container className='my-5'>
-      <h3 className='txt-dark mt-5 mb-0 fs-2' >Honorary Members of the Board of Directors</h3>
+        <h3 className='txt-dark mt-5 mb-0 fs-2' >Honorary Members of the Board of Directors</h3>
         <Row className='d-flex flex-lg-row flex-column'>
-          {posts.map((items,index) => (
-            <Col lg={3} className='mt-4' key={index}>
-              <div className="card border-0 text-center">
-  <Image src={items._embedded['wp:featuredmedia'][0].source_url} alt={items.title.rendered} width={250} height={250} className="w-100 h-100 px-4" />
-  <div class="card-body">
-    <h5 class="card-title fw-400 txt-blue">{items.acf.designation}</h5>
-    <p class="card-text fs-6" style={{minHeight:'60px'}}>{items.acf.name}</p>
-    <a href={items.acf.pdf_url} target="_blank" rel="noopener noreferrer" class="btn btn-primary wbg-blue border-0">Read more</a>
-  </div>
-</div>
-</Col>
+          {posts.map((items, index) => (
+            <Col lg={3} className='mt-4 d-flex flex-column ' key={index}>
+              <Col className='bg-white'>
+                <div className="card border-0 text-center">
+                  <Image src={items._embedded['wp:featuredmedia'][0].source_url} alt={items.title.rendered} width={250} height={250} className="w-100 h-100 px-4" />
+                  <div class="card-body">
+                    <h5 class="card-title fw-400 txt-blue">{items.acf.designation}</h5>
+                    <p class="card-text fs-6" style={{ minHeight: '60px' }}>{items.acf.name}</p>
+                    <a href={items.acf.pdf_url} target="_blank" rel="noopener noreferrer" class="btn btn-primary wbg-blue border-0">Read more</a>
+                  </div>
+                </div>
+              </Col>
+            </Col>
           ))}
         </Row>
       </Container>
@@ -80,8 +82,8 @@ const BoardOfHonoraryList = () => {
             <p>{selectedPost?.acf.honorary}</p>
             <div dangerouslySetInnerHTML={{ __html: selectedPost?.content.rendered }} /> */}
 
-            {/* Add more content here as needed */}
-          {/* </Modal.Body>
+      {/* Add more content here as needed */}
+      {/* </Modal.Body>
         </div>
       </Modal> */}
     </>

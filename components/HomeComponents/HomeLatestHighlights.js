@@ -25,28 +25,36 @@ const HomeLatestHighlights = () => {
   }, []);
 
   return (
-      <Container className=' pb-5 p-0'>
-          <h3 className="fs-1 txt-dark text-center py-5">Latest Highlights</h3>
-          <Container>
-          {isData.map((post,index) => (
-<Row className='g-0' key={index}>
-<Col className='' lg={6}>
-<Image src={post._embedded['wp:featuredmedia'][0].source_url}
-          alt={post.title.rendered}
-          height={400}
-          width={550}
-          className="position-absolute  h-auto"
-        />
-</Col>
-<Col className='wbg-dark text-white p-5 mt-5' lg={6}>
-<h3 className='fs-1 fw-300' dangerouslySetInnerHTML={{ __html: post.title.rendered }}/>
-<p className='fs-5 fw-300' dangerouslySetInnerHTML={{__html:post.acf.excerpt}}/>
-</Col>
-              </Row>              
+    <>
+      <Container className='pb-5 p-0'>
+        <h3 className="fs-1 txt-dark text-center py-5">Latest Highlights</h3>
+        <Container>
+          {isData.map((post, index) => (
+            <Row className='g-0 d-flex flex-lg-row flex-column' key={index}>
+              <Col className='' lg={6}>
+                <Image src={post._embedded['wp:featuredmedia'][0].source_url}
+                  alt={post.title.rendered}
+                  height={400}
+                  width={550}
+                  className="position-absolute h-auto d-flex d-lg-block d-none"
+                />
 
-))}
-</Container>
-</Container>
+                <Image src={post._embedded['wp:featuredmedia'][0].source_url}
+                  alt={post.title.rendered}
+                  height={400}
+                  width={550}
+                  className="w-100 h-auto d-flex d-block d-lg-none"
+                />
+              </Col>
+              <Col className='wbg-dark text-white p-5 mt-lg-5' lg={6}>
+                <h3 className='fs-1 fw-300' dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+                <p className='fs-5 fw-300' dangerouslySetInnerHTML={{ __html: post.acf.excerpt }} />
+              </Col>
+            </Row>
+          ))}
+        </Container>
+      </Container>
+    </>
   );
 };
 

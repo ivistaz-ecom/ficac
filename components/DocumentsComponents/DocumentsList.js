@@ -29,17 +29,17 @@ const DocumentsList = () => {
     return (
         <>
             <Container className='py-3'>
-                {data.map((items,index) => (
-                    <Row className='border-2 my-3 p-2' key={index}>
+                {data.map((items, index) => (
+                    <Row className='border-2 my-3 p-2 d-flex flex-lg-row flex-column text-center text-lg-start' key={index}>
                         <Col lg={8}>
                             <h2 className='fs-4 fw-400'>{items.title.rendered}</h2></Col>
                         <Col lg={4}>
                             {items.acf?.pdf_file?.url && (
-                                <Link href={items.acf.pdf_file.url} className='btn btn-primary border-0 wbg-blue px-5 p-3 fs-6 fw-300'>View</Link>
+                                <Link href={items.acf.pdf_file.url} className='btn btn-primary border-0 wbg-blue px-5 py-2 fs-6 fw-300' target='_blank'>View</Link>
                             )}
-                                </Col>
+                        </Col>
                     </Row>
-                
+
                 ))}
             </Container>
         </>
