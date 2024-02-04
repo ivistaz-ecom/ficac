@@ -1,12 +1,13 @@
 'use client'
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react'
-import { Container, Image, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import configData from "../../config.json";
 
 const EventGalleryLists = () => {
     const [data, setData] = useState([]);
 
-    const Acf_URL = 'https://beta.ficacworld.org/wp-json/wp/v2/events_gallery?_embed';
+    const Acf_URL = `${configData.SERVER_URL}events_gallery?_embed`;
 
     const fetchPosts = async () => {
         try {
@@ -33,29 +34,22 @@ const EventGalleryLists = () => {
 
     return (
         <Container className='py-3'>
-            <Row className='px-3 border-black m-lg-4 gap-lg-5 gap-5 m-2' >
-                {data.map((item) => (
-                    <div key={item.id}
-                        className='d-flex flex-lg-row flex-column justify-content-lg-between gap-lg-5 shadow-lg p-4'
-                        style={{backgroundColor:"#fff"}}
-                    >
-                        <Col className='d-flex flex-column'>
-                       <h3 dangerouslySetInnerHTML={{ __html: item.title.rendered}}></h3>
-
-                            <p>{item.acf.date}</p>
-                        </Col>
-                        <Col className='d-flex flex-column flex-wrap align-content-center justify-content-center' md={3} >
-                            {/* <Link href={`/gallery/${item.slug}`}></Link> */}
-                            <Link className='text-decoration-none rounded-2 py-2 px-3 px-lg-5 d-inline-block text-white'
-                                style={{ backgroundColor: "#001C79", fontSize: "18px" }}
-                                href={`/gallery/${item.slug}`}>
-                                View Photos
-                            </Link>
-                        </Col>
+                {data.map((item,index) => (
+                    <div class="card mb-3 rounded-3 btn-border" key={index}>
+                    <div class="row g-0">
+                      <div class="col-md-10">
+                        <div class="card-body">
+                          <h5 class="card-title fs-5 fw-500" dangerouslySetInnerHTML={{ __html: item.title.rendered}}/>
+                          <p class="card-text fs-6 fw-300" >{item.acf.date}</p>
+                        </div>
+                            </div>
+                            <div class="col-md-2 justify-content-center align-self-center">
+                        <Link href={`/gallery/${item.slug}`} className='btn btn-primary wbg-blue border-0 px-4 p-3 fs-5 fw-300'>View Photos</Link>
+                      </div>
                     </div>
+                  </div>
+                  
                 ))}
-
-            </Row>
         </Container>
 
 

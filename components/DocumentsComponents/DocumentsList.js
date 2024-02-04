@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
+import configData from "../../config.json";
 
 const DocumentsList = () => {
 
@@ -11,8 +12,7 @@ const DocumentsList = () => {
 
     const fetchData = async () => {
         try {
-            // let result = await fetch(`https://ficac.ivistaz.co/wp-json/wp/v2/directors?_embed&per_page=100`);
-            let result = await fetch('https://beta.ficacworld.org/wp-json/wp/v2/documents?_embed');
+            let result = await fetch(`${configData.SERVER_URL}documents?_embed`);
 
             result = await result.json();
             setData(result);
@@ -29,32 +29,18 @@ const DocumentsList = () => {
     return (
         <>
             <Container className='py-3'>
-                <Row className='px-lg-5 my-4 gap-3'>
-                    {data.map((items) => (
-                        <div key={items}>
-                            {/* <Col className='col-4'></Col> */}
-                            <Col className=' mx-lg-5 px-lg-4 d-flex flex-lg-row flex-column flex-wrap justify-content-lg-between justify-content-center align-content-center align-items-center'
-                                style={{ fontSize: "23px", color: "#001C79" }}>
-                                <p>
-                                    <b>{items.title.rendered}</b>
-                                </p>
-
-                                {items.acf?.pdf_file?.url && (
-                                <a href={items.acf.pdf_file.url} target="_blank" rel="noopener noreferrer">
-                                    <p
-                                        className='rounded-2 py-2 px-4 px-lg-5 d-inline-block text-white '
-                                        style={{ backgroundColor: "#001C79", fontSize: "18px" }}
-                                    >
-                                        View
-                                    </p>
-                                </a>
+                {data.map((items) => (
+                    <Row className='border-2 my-3 p-2'>
+                        <Col lg={8}>
+                            <h2 className='fs-4 fw-400'>{items.title.rendered}</h2></Col>
+                        <Col lg={4}>
+                            {items.acf?.pdf_file?.url && (
+                                <Link href={items.acf.pdf_file.url} className='btn btn-primary border-0 wbg-blue px-5 p-3 fs-6 fw-300'>View</Link>
                             )}
-                        
-                            </Col>
-                            {/* <Col className='col-4'></Col> */}
-                        </div>
-                    ))}
-                </Row>
+                                </Col>
+                    </Row>
+                
+                ))}
             </Container>
         </>
     )

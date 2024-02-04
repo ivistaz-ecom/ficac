@@ -1,46 +1,47 @@
 import Link from 'next/link'
 import React from 'react'
-import { Container, Row, Col, Image } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
+import Image from 'next/image'
 
 const HomeOrganisation = () => {
   return (
     <Container className=''>
-      <Row className='gap-lg-1 gap-3 py-3 pt-5 d-flex flex-column flex-lg-row justify-content-center flex-wrap'>
+      <Row className='d-flex justify-content-center align-items-center' >
        
-        <Col className='d-flex align-items-center justify-content-center'>
+      <Col className='' >
           <Link href="https://www.fpa2.org/" target='_blank'>
-          <Image src="/prince_org.png" alt=''/>
+            <Image src="/1.svg" alt='' width={200} height={50}/>
           </Link>
         </Col>
       
       
-        <Col className='d-flex align-items-center justify-content-center ' >
+        <Col className=''>
           <Link href="https://cvcollege.org/" target='_blank'>
-          <Image src="/vocational_education.png" alt=''/>
+          <Image src="/2.svg" alt='' width={100} height={200} />
           </Link>
         </Col>
        
-        <Col className='d-flex align-items-center justify-content-center '>
+        <Col className=''lg={1}>
           <Link href="https://rasit.org/" target='_blank'>
-          <Image src="/rasit_org.png" alt=''/>
+          <Image src="/3.svg" alt='' width={60} height={200}/>
           </Link>
         </Col>
         
-        <Col className='d-flex align-items-center justify-content-center ' >
+        <Col className='' >
           <Link href="https://www.ascame.org/" target='_blank'>
-          <Image src="/ascame.png" alt=''/>
+          <Image src="/4.svg" alt='' width={300} height={200}/>
           </Link>
         </Col>
       
-        <Col className='d-flex align-items-center justify-content-center '>
+        <Col className=''>
           <Link href="https://www.unicef.org/" target='_blank'>
-          <Image src="/unicef_org.png" alt=''/>
+          <Image src="/5.svg" alt='' width={130} height={200} />
           </Link>
         </Col>
        
-        <Col className='d-flex align-items-center justify-content-center ' >
+        <Col className='' >
           <Link href="https://unric.org/en/" target='_blank'>
-          <Image src="/unic.png" alt=''/>
+          <Image src="/6.svg" alt='' width={130} height={200} />
           </Link>
         </Col>
       
@@ -58,14 +59,14 @@ const HomeOrganisation = () => {
       <Row className='d-flex flex-row justify-content-center pb-5'>
         <Col className='d-flex align-items-center gap-5 justify-content-center' >
           <Link href="https://european-union.europa.eu/index_en" target='_blank'>
-          <Image src="/ficac_ngo.png" alt=''/>
+          <Image src="/7.svg" alt='' width={90} height={100}/>
           </Link>
           <Link href="https://ecosoc.un.org/en" target='_blank'>
-          <Image src="/eco_soc.png" alt=''/>
+          <Image src="/8.svg" alt='' width={90} height={100}/>
           </Link>
 
           <Link href="https://www.interlegal.net/" target='_blank'>
-          <Image src="/inter_legal.png" alt=''/>
+          <Image src="/9.svg" alt='' width={100} height={100}/>
           </Link>
         </Col>
       </Row>

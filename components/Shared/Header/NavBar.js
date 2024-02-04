@@ -1,12 +1,16 @@
+'use client'
 import React from 'react'
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaBarsStaggered } from "react-icons/fa6";
+import { usePathname } from 'next/navigation'
 
 function NavBar() {
+    const pathname = usePathname()
     return (
-      <Container className='head-container'>
+        <Container className='head-container' fluid>
+            <Container className='g-0'>
    <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
                     <Link href="/" className="text-decoration-none navbar-brand">
@@ -15,28 +19,28 @@ function NavBar() {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown poppins">
-          <Link class="nav-link dropdown-toggle" href="/about" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <Link class={pathname == "/about" ? "active nav-link dropdown-toggle" : "nav-link dropdown-toggle"} href="/about" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             About
           </Link>
           <ul class="dropdown-menu poppins" aria-labelledby="navbarDropdown">
-          <li><Link class="dropdown-item" href="/about">Who is FICAC</Link></li>
+          <li><Link class={pathname == "/about" ? "active dropdown-item" : "dropdown-item"} href="/about">Who is FICAC</Link></li>
            <li><hr class="dropdown-divider"/></li>
-            <li><Link class="dropdown-item" href="/about/history">History</Link></li>
+            <li><Link class={pathname == "/about/history" ? "active dropdown-item" : "dropdown-item"} href="/about/history">History</Link></li>
             <li><hr class="dropdown-divider"/></li>
-            <li><Link class="dropdown-item" href="/about/mission-vision">Mission & Vision</Link></li>
+            <li><Link class={pathname == "/about/mission-vision" ? "active dropdown-item" : "dropdown-item"}  href="/about/mission-vision">Mission & Vision</Link></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><Link class="dropdown-item" href="/about/executive">Leadership</Link></li>
+            <li><Link class={pathname == "/about/executive" ? "active dropdown-item" : "dropdown-item"} href="/about/executive">Leadership</Link></li>
                                     
           </ul>
                             </li>
         <li class="nav-item">
-          <Link class="nav-link poppins" href="/news" >FICAC News</Link>
+        <Link class={pathname == "/news" ? "active nav-link poppins":"nav-link poppins"} href="/news" >FICAC News</Link>
         </li>                
         <li class="nav-item">
-          <Link class="nav-link poppins" href="/membership"  >Membership</Link>
+          <Link class={pathname == "/membership" ? "active nav-link poppins":"nav-link poppins"} href="/membership"  >Membership</Link>
         </li>                  
         <li class="nav-item">
-          <Link class="nav-link poppins" href="/contact" >Contact Us</Link>
+          <Link class={pathname == "/contact" ? "active nav-link poppins":"nav-link poppins"} href="/contact" >Contact Us</Link>
         </li>
       </ul>
      <div class="d-flex">
@@ -55,26 +59,27 @@ function NavBar() {
   <div class="offcanvas-body">
   <nav class="navbar mobile-menu navbar-expand-lg">
   <div class="container-fluid">
-    <div class="" >
+    <div class="w-100" >
       <ul class="navbar-nav mobile">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Committees</a>
+          <Link class={pathname == "/ficac-committees" ? "active-white nav-link active":"nav-link"} aria-current="page" href="/ficac-committees">Committees</Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Directory</a>
+          <Link class={pathname == "/directory" ? "active-white nav-link active":"nav-link"} href="/directory">Directory</Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Documents</a>
+          <Link class={pathname == "/documents" ? "active-white nav-link active":"nav-link"} href="/documents">Documents</Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Event Gallery</a>
+          <Link class={pathname == "/gallery" ? "active-white nav-link active":"nav-link"} href="/gallery">Event Gallery</Link>
         </li>
       </ul>
     </div>
   </div>
 </nav>
   </div>
-</div>
+                </div>
+                </Container>
 </Container>
   )
 }

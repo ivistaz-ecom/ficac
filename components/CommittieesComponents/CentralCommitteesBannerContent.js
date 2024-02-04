@@ -3,20 +3,14 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 const CentralCommitteesBannerContent = () => {
   return (
-
-    <Container fluid className='p-0'>
-      <Container className='p-0'>
-        <Col className='banner-text-container text-white'>
-          <p className='mb-0'>
-            FICAC
-            <br />
+          <Container fluid className='p-0 my-5'>
+    <Container className='p-0'>
+        <Col className='wbg-dark p-4 mt-n1' lg={6} sm={12}>
+        <h1 className='mb-0 bfs-1 text-white'>
+        Central
+            <br className='lh-1' />
             Committees
-          </p>
-          <p
-            style={{ fontSize: "30px", fontWeight: "lighter" }}
-          >
-            Central Committees
-          </p>
+        </h1>
         </Col>
       </Container>
     </Container>

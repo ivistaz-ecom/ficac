@@ -30,7 +30,7 @@ const NewsList = () => {
 
   return (
     <>
-    <Container className='mt-5'>
+    <Container className='my-5'>
       <Row className='' >
         {data.map((post,index) => (
           <Col lg={4} className='mt-4' key={index}>
@@ -49,7 +49,7 @@ const NewsList = () => {
 
       </Row>
     </Container>
-    <Container className='mt-5'>
+    {/* <Container className='mt-5'>
     <Row>
    <Col className='d-flex justify-content-center mb-4  d-inline-flex gap-1'   >
                 <Link href="/news-archive"
@@ -70,7 +70,7 @@ const NewsList = () => {
                 </Link>
                 </Col>
    </Row>
-    </Container>
+    </Container> */}
     </>
     
   )

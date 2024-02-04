@@ -1,10 +1,9 @@
 'use client'
 // Import necessary dependencies
 import React, { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
-const DocumentsBanner = () => {
-
+const HomeBanner = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   // Function to handle window resize
@@ -30,41 +29,14 @@ const DocumentsBanner = () => {
   }, []);
 
 
-  //   const background = {
-  //       backgroundImage:
-  //           "url('/documents_banner.png')",
-  //       height: "90vh",
-  //       fontSize: "50px",
-  //       backgroundSize: "cover",
-  //       backgroundRepeat: "no-repeat",
-  //       width:"100%"
-  //   }
-
-  // return (
-  //   <Container fluid className='container-padding'>
-  //  <Container fluid style={background} >
-  //  </Container>
-  //  </Container>
-  // )
-
-    // Styles for the banner
-    const backgroundStyles = {
-      height: isMobile ? '208px' : '90vh',
-      fontSize: '50px',
-      width: '100%',
-      backgroundSize: isMobile ? 'cover' : 'cover',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: isMobile ? 'center center' : 'initial',
-      backgroundImage: isMobile
-        ? "url('/documents_banner.png')"
-        : "url('/documents_banner.png')",
-    };
-  
-    return (
-      <Container fluid className='container-padding'>
-        <Container fluid style={backgroundStyles}></Container>
+  return (
+    <>
+    <Container fluid className='px-5 '>
+      <Container fluid style={{ backgroundImage: 'url(/documents_banner.png)', height: '750px', backgroundSize: 'cover' }}>
       </Container>
-    );
-}
+    </Container>
+      </>
+  );
+};
 
-export default DocumentsBanner
+export default HomeBanner;

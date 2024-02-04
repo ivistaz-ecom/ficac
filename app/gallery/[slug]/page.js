@@ -1,16 +1,17 @@
 import React from 'react'
 import Gallery from '../../../utils/gallerys'
-
+import Footer from '../../../components/Shared/Footer/Footer'
+import Back from '../../../components/Shared/Back'
 
 
 function page({params}) {
     
   return (
-    <div>
-<Gallery slug={params.slug}/>
-
-
-    </div>
+    <>
+      <Back/>
+      <Gallery slug={params.slug} />
+      <Footer/>
+    </>
   )
 }
 

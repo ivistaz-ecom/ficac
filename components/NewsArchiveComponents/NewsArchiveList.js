@@ -12,9 +12,7 @@ const NewsArchiveList = () => {
 
   const fetchData = async () => {
     try {
-      let result = await fetch(
-        `${configData.SERVER_URL}categories=16&_embed&per_page=20&page=${page}`
-      );
+      let result = await fetch(`${configData.SERVER_URL}categories=16&_embed&per_page=20&page=${page}`);
 
       if (!result.ok) {
         throw new Error(`HTTP error! Status: ${result.status}`);

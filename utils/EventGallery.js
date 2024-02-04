@@ -1,8 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { Image, Container, Row, Col } from 'react-bootstrap';
+import {Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link'
-
+import configData from "../config.json";
+import Image from 'next/image'
 
 
 
@@ -16,7 +17,7 @@ const Post = ({ slug }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://beta.ficacworld.org/wp-json/wp/v2/events_gallery?slug=${slug}`);
+        const res = await fetch(`${configData.SERVER_URL}events_gallery?slug=${slug}`);
         if (!res.ok) {
           throw new Error(`Failed to fetch data. Status: ${res.status}`);
         }
@@ -94,10 +95,15 @@ const Post = ({ slug }) => {
                             marginLeft: `${index % 4 === 0 ? 0 : -50}px`, // 0 for the first, 30 for the rest
                           }}
                         >
-                          <Image src={photo.full_image_url} alt="" width="100%" height={212}
+                          <Image src={photo.full_image_url}
+                          
+                            alt=""
+                            width={280}
+                            height={280}
+                            className="w-100 h-auto cursor-pointer"
                             style={{ objectFit: 'cover', objectPosition: 'center center' }}
                             onClick={() => openSelectedImage(photo)}
-                            className='cursor-pointer'
+                            
                           />
                         </Col>
 
@@ -107,7 +113,11 @@ const Post = ({ slug }) => {
                         <Col
                           className='p-0 d-lg-none d-block mt-3'
                         >
-                          <Image src={photo.full_image_url} alt="" width="100%" />
+                          <Image src={photo.full_image_url} alt=""
+                          width={280}
+                          height={280}
+                          className="w-100 h-auto cursor-pointer"
+                          />
                         </Col>
 
                       </Col>
@@ -128,7 +138,11 @@ const Post = ({ slug }) => {
                             marginLeft: `${index % 4 === 0 ? 0 : -50}px`, // 0 for the first, 30 for the rest
                           }}
                         >
-                          <Image src={photo.full_image_url} alt="" width="100%" height={212} />
+                          <Image src={photo.full_image_url} alt=""
+                          width={280}
+                          height={280}
+                          className="w-100 h-auto cursor-pointer"
+                          />
                         </Col>
 
 
@@ -137,7 +151,11 @@ const Post = ({ slug }) => {
                         <Col
                           className='p-0 d-lg-none d-block mt-3'
                         >
-                          <Image src={photo.full_image_url} alt="" width="100%" />
+                          <Image src={photo.full_image_url} alt=""
+                          width={280}
+                          height={280}
+                          className="w-100 h-auto cursor-pointer"
+                          />
                         </Col>
 
                       </Col>
@@ -163,7 +181,9 @@ const Post = ({ slug }) => {
                 <Image
                   src={selectedImage.full_image_url}
                   alt=""
-                  width="100%"
+                  width={280}
+                            height={280}
+                            className="w-100 cursor-pointer"
                   style={{ objectFit: 'cover', objectPosition: 'center center' }}
                 />
               </div>

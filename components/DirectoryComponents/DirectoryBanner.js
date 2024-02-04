@@ -1,9 +1,9 @@
 'use client'
 // Import necessary dependencies
 import React, { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
-const DirectoryBanner = () => {
+const HomeBanner = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   // Function to handle window resize
@@ -29,40 +29,14 @@ const DirectoryBanner = () => {
   }, []);
 
 
-
-// const background = {
-//      backgroundImage: "url('/directory_banner.png')",
-//      height: "90vh",
-//      fontSize: "50px",
-//      backgroundSize: "cover",
-//      backgroundRepeat: "no-repeat",
-//      width:"100%"
-//     }
-//   return (
-//     <Container fluid className='container-padding'>
-//     <Container fluid style={background} >
-//     </Container>
-//     </Container>
-//   )
-
-  // Styles for the banner
-  const backgroundStyles = {
-    height: isMobile ? '208px' : '90vh',
-    fontSize: '50px',
-    width: '100%',
-    backgroundSize: isMobile ? 'cover' : 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: isMobile ? 'center center' : 'initial',
-    backgroundImage: isMobile
-      ?"url('/directory_banner.png')"
-      : "url('/directory_banner.png')",
-  };
-
   return (
-    <Container fluid className='container-padding'>
-      <Container fluid style={backgroundStyles}></Container>
+    <>
+    <Container fluid className='px-5 '>
+      <Container fluid style={{ backgroundImage: 'url(/directory_banner.png)', height: '750px', backgroundSize: 'cover' }}>
+      </Container>
     </Container>
+      </>
   );
-}
+};
 
-export default DirectoryBanner
+export default HomeBanner;

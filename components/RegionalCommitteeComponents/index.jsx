@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Header from '../Shared/Header'
+import Header from '../Shared/Header/NavBar'
 import Footer from '../Shared/Footer'
 import RegionalCommittees from './RegionalCommittees'
 import RegionCommitteesBanner from '../RegionalCommitteeComponents/RegionCommitteeBanner'

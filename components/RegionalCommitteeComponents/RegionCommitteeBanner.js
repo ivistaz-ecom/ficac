@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 
-const RegionCommitteeBanner = () => {
+const HomeBanner = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   // Function to handle window resize
@@ -29,43 +29,12 @@ const RegionCommitteeBanner = () => {
   }, []);
 
 
-  // const background = {
-  //   backgroundImage:
-  //     "url('/region_banner.png')",
-  //   height: "90vh",
-  //   fontSize: "50px",
-  //   backgroundSize: "cover",
-  //   backgroundRepeat: "no-repeat",
-  //   width: "100%"
-  // }
-
-  // return (
-
-
-  //   <Container fluid className='container-padding'>
-  //     <Container fluid style={background} >
-  //     </Container>
-  //   </Container>
-
-  // )
-
-  const backgroundStyles = {
-    height: isMobile ? '208px' : '90vh',
-    fontSize: '50px',
-    width: '100%',
-    backgroundSize: isMobile ? 'cover' : 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: isMobile ? 'center center' : 'initial',
-    backgroundImage: isMobile
-      ?  "url('/regions_committee_banner.png')"
-      :   "url('/regions_committee_banner.png')",
-  };
-
   return (
-    <Container fluid className='container-padding'>
-      <Container fluid style={backgroundStyles}></Container>
+    <Container fluid className='px-5 '>
+      <Container fluid style={{ backgroundImage: 'url(/regions_committee_banner.png)', height: '750px', backgroundSize: 'cover' }}>
+      </Container>
     </Container>
   );
-}
+};
 
-export default RegionCommitteeBanner
+export default HomeBanner;
