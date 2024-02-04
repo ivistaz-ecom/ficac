@@ -57,48 +57,49 @@ const HomeConcludedEvents = () => {
   };
 
   return (
-      <Col lg={8} className="g-0">
+    <Col lg={8} className="g-0">
       <h3 className="fs-1 txt-blue text-center py-5">Concluded Events</h3>
-        <Carousel
-          swipeable={true}
-          draggable={false}
-          showDots={false}
-          responsive={responsive1}
-          ssr={true}
-          infinite={false}
-          autoPlaySpeed={1500}
-          keyBoardControl={true}
-          customTransition="all .5"
-          transitionDuration={1000}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "desktop"]}
-          showArrows={false}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
+      <Carousel
+        swipeable={true}
+        draggable={false}
+        showDots={false}
+        responsive={responsive1}
+        ssr={true}
+        infinite={false}
+        autoPlaySpeed={1500}
+        keyBoardControl={true}
+        customTransition="all .5"
+        transitionDuration={1000}
+        containerClass="carousel-container"
+        removeArrowOnDeviceType={["tablet", "desktop"]}
+        showArrows={false}
+        dotListClass="custom-dot-list-style"
+        itemClass="carousel-item-padding-40-px"
 
-        >
-          {isData.map((post) => (
-            <div
-              key={post.id}
-            >
-              <Col className="p-0 m-2 mt-0" >
-                <div class="card border-0">
+      >
+        {isData.map((post) => (
+          <div
+            key={post.id}
+          >
+            <Col className="p-0 m-2 mt-0" >
+              <div class="card border-0">
                 <Image
-                    src={post._embedded["wp:featuredmedia"][0].source_url}
-                    width={300}
-                    height={300}
-                    className="w-100 h-auto card-img-top"
-                  />
-  <div class="card-body text-center">
-    <h5 class="card-title txt-dark fw-400 text-start mh-104" dangerouslySetInnerHTML={{ __html: post.title.rendered }}/>
-    <p class="card-text fs-5 fw-300 text-start p-3" >FICAC, the World Federation of Consuls had its 1st Latin America Conference in San Pedro Sula, Honduras, from August 31st, 2023- September 3rd 2023, which was organized by the Association Consular Corps of San Pedro Sula.</p>          
-    <Link href={post.acf.url} class="btn wbg-blue p-3 text-white btn-primary border-0">Read more</Link>
-  </div>
-</div></Col>
-            </div>
-          ))}
-        </Carousel>
-      </Col>
+                  src={post._embedded["wp:featuredmedia"][0].source_url}
+                  width={300}
+                  height={300}
+                  className="w-100 h-auto card-img-top"
+                  alt=""
+                />
+                <div class="card-body text-center">
+                  <h5 class="card-title txt-dark fw-400 text-start mh-104" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+                  <p class="card-text fs-5 fw-300 text-start p-3">FICAC, the World Federation of Consuls had its 1st Latin America Conference in San Pedro Sula, Honduras, from August 31st, 2023- September 3rd 2023, which was organized by the Association Consular Corps of San Pedro Sula.</p>
+                  <Link href={post.acf.url} class="btn wbg-blue py-2 px-3 m-2 text-white btn-primary border-0">Read more</Link>
+                </div>
+              </div></Col>
+          </div>
+        ))}
+      </Carousel>
+    </Col>
   );
 };
 

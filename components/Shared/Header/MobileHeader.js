@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Container, Row, Col, Image} from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import Link from "next/link";
 
 const MobileHeader = () => {
@@ -13,13 +13,13 @@ const MobileHeader = () => {
   const [isOnclick3, setIsOnclick3] = useState(false);
 
 
-   // nav bar
-   const [isOnclicknav1, setIsOnclicknav1] = useState(false);
-   const [isOnclicknav2, setIsOnclicknav2] = useState(false);
-   const [isOnclicknav3, setIsOnclicknav3] = useState(false);
- 
-   // nested nav bar
-   const [isOnclicknestednav, setIsOnclicknestednav] = useState(false);
+  // nav bar
+  const [isOnclicknav1, setIsOnclicknav1] = useState(false);
+  const [isOnclicknav2, setIsOnclicknav2] = useState(false);
+  const [isOnclicknav3, setIsOnclicknav3] = useState(false);
+
+  // nested nav bar
+  const [isOnclicknestednav, setIsOnclicknestednav] = useState(false);
 
   const toggleMenuClickMobile = () => {
     setIsToogleMenuMobile(!isToggleMenuMobile);
@@ -89,27 +89,27 @@ const MobileHeader = () => {
         <Container>
           <Row>
             <Col className="col-lg-4 d-flex flex-column align-content-center py-3 ">
-            <Link href="/" className="text-decoration-none">
-              <Image src="/FICAC Logo.svg" alt="logo" width={100} />
+              <Link href="/" className="text-decoration-none">
+                <Image src="/FICAC Logo.svg" alt="logo" width={100} />
               </Link>
             </Col>
 
             <Col className="cursor-pointer d-flex flex-wrap align-content-center justify-content-end">
               <div className="mb-0 p-0 " onClick={toggleMenuClickMobile} >
-                <i class="bi bi-list text-white" 
-                style={{ fontSize: "50px" }}></i>
+                <i class="bi bi-list text-white"
+                  style={{ fontSize: "50px" }}></i>
               </div>
             </Col>
           </Row>
-          
+
         </Container>
       </Container>
 
       {/* Popup Menu */}
       <Container className="position-fixed">
-                {isToggleMenuMobile && (
-     <>
-    <div
+        {isToggleMenuMobile && (
+          <>
+            <div
               className="position-absolute bg-opacity-25  top-0 end-0 bottom-0 start-0"
               onClick={toggleMenuClickMobile}
             >
@@ -122,78 +122,76 @@ const MobileHeader = () => {
               <p className="text-white fs-2 align-content-right pt-2 p-2 d-flex justify-content-end" onClick={toggleMenuClickMobile}>
                 <i class="bi bi-x-circle"></i>
               </p>
+
               {/* Left Side Menu */}
-
-              {/* side nav bar */}
-
               <div
-           onClick={handleOnclick}
-           className="d-flex flex-row  bg-white align-items-center gap-5 p-3"
-         >
-         
-         <Link href="/about" className="text-decoration-none">
-         <div className="">
-             <h5 className="mb-0 text-center position-relative text-black ms-2">
-             About
-             </h5>
-           </div>
-           </Link>
-           <div className="b-0 m-0 text-black">
-             {isOnclick ? (
-               <i class="bi bi-chevron-up b-0 m-0"></i>
-             ) : (
-               <i class="bi bi-chevron-down"></i>
-             )}
-           </div>
-         </div>
-         {isOnclick && (
-           <div>
-            <Link href="/about" className="text-decoration-none">
-           <div className="p-2 pt-3">
-           <h5 className="ms-4 text-white">Who is FICAC </h5>
-           </div>
-           </Link>
-           <Link href="/about/history/" className="text-decoration-none">
-           <div className="p-2">
-           <h5 className="ms-4 text-white">History</h5>
-           </div>
-           </Link>
-           <Link href="/about/mission-vision/" className="text-decoration-none">
-           <div className="p-2">
-           <h5 className="ms-4 text-white">Misssion & Vission</h5>
-           </div>
-           </Link>
-           <Link href="/about/executive/" className="text-decoration-none">
-           <div className="p-2">
-           <h5 className="ms-4 text-white">Leadership</h5>
-           </div>
-           </Link>
-               
-              </div>
-         )}
+                onClick={handleOnclick}
+                className="d-flex flex-row  bg-white align-items-center gap-5 p-3"
+              >
 
-                  {/* NEWS heading heading */}
-                  <div className="d-flex flex-row  bg-white align-items-center gap-1 p-3">
+                <Link href="/about" className="text-decoration-none">
+                  <div className="">
+                    <h5 className="mb-0 text-center position-relative text-black ms-2">
+                      About
+                    </h5>
+                  </div>
+                </Link>
+                <div className="b-0 m-0 text-black">
+                  {isOnclick ? (
+                    <i class="bi bi-chevron-up b-0 m-0"></i>
+                  ) : (
+                    <i class="bi bi-chevron-down"></i>
+                  )}
+                </div>
+              </div>
+              {isOnclick && (
+                <div>
+                  <Link href="/about" className="text-decoration-none">
+                    <div className="p-2 pt-3">
+                      <h5 className="ms-4 text-white">Who is FICAC </h5>
+                    </div>
+                  </Link>
+                  <Link href="/about/history/" className="text-decoration-none">
+                    <div className="p-2">
+                      <h5 className="ms-4 text-white">History</h5>
+                    </div>
+                  </Link>
+                  <Link href="/about/mission-vision/" className="text-decoration-none">
+                    <div className="p-2">
+                      <h5 className="ms-4 text-white">Misssion & Vission</h5>
+                    </div>
+                  </Link>
+                  <Link href="/about/executive/" className="text-decoration-none">
+                    <div className="p-2">
+                      <h5 className="ms-4 text-white">Leadership</h5>
+                    </div>
+                  </Link>
+
+                </div>
+              )}
+
+              {/* NEWS heading heading */}
+              <div className="d-flex flex-row  bg-white align-items-center gap-1 p-3">
                 <Link href="/news" className="text-decoration-none">
                   <div>
                     <h5 className="mb-0 text-center position-relative text-black ms-2"
                       style={{ fontSize: "18px" }}
                     >
-                     FICAC News
+                      FICAC News
                     </h5>
                   </div>
                 </Link>
               </div>
 
 
-                 {/* Menbership heading heading */}
-                 <div className="d-flex flex-row  bg-white align-items-center gap-1 p-3">
+              {/* Menbership heading heading */}
+              <div className="d-flex flex-row  bg-white align-items-center gap-1 p-3">
                 <Link href="/membership" className="text-decoration-none">
                   <div>
                     <h5 className="mb-0 text-center position-relative text-black ms-2"
                       style={{ fontSize: "18px" }}
                     >
-                     Membership
+                      Membership
                     </h5>
                   </div>
                 </Link>
@@ -206,7 +204,7 @@ const MobileHeader = () => {
                     <h5 className="mb-0 text-center position-relative text-black ms-2"
                       style={{ fontSize: "18px" }}
                     >
-                     Contact Us
+                      Contact Us
                     </h5>
                   </div>
                 </Link>
@@ -226,14 +224,14 @@ const MobileHeader = () => {
                     </h5>
                   </div>
                   </Link> */}
-                  {/* <div className="b-0 m-0 text-black">
+              {/* <div className="b-0 m-0 text-black">
                     {isOnclicknav1 ? (
                       <i class="bi bi-chevron-up b-0 m-0"></i>
                     ) : (
                       <i class="bi bi-chevron-down"></i>
                     )}
                   </div> */}
-                {/* </div>
+              {/* </div>
                 {isOnclicknav1 && (
                 <div>
                   <div
@@ -255,7 +253,7 @@ const MobileHeader = () => {
                   {isOnclicknestednav && (
                     <div className="top  justify-content-center  align-items-center">
                       <div className="headerOffcanvas"> */}
-                        {/* <Link href="/ficac-committees/central-committees/" className="text-decoration-none">
+              {/* <Link href="/ficac-committees/central-committees/" className="text-decoration-none">
                           <div className="header p-0 pt-3">
                             <p className="ms-5" style={{ fontSize: "14px" }}> Central Committees </p>
                           </div>
@@ -313,7 +311,7 @@ const MobileHeader = () => {
                     <h5 className="mb-0 text-center position-relative text-black ms-2"
                       style={{ fontSize: "18px" }}
                     >
-                     Committees
+                      Committees
                     </h5>
                   </div>
                 </Link>

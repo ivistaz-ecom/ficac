@@ -28,10 +28,24 @@ const HomeBanner = () => {
     }
   }, []);
 
+  const backgroundStyles = {
+    height: isMobile ? '258px' : '75vh',
+    fontSize: '50px',
+    width: '100%',
+    backgroundSize: isMobile ? 'cover' : 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: isMobile ? 'center center' : 'initial',
+    backgroundImage: isMobile
+      ? "url('/banner_images/mission_vission_page_banner.jpg')"
+      : "url('/banner_images/mission_vission_page_banner.jpg')",
+  };
 
   return (
-    <Container fluid className='px-5 '>
-      <Container fluid style={{ backgroundImage: 'url(/mission_vision.png)', height: '750px', backgroundSize: 'cover' }}>
+    <Container fluid className='px-lg-5 p-0'>
+      <Container fluid style={{ backgroundImage: 'url(/mission_vision.png)', height: '750px', backgroundSize: 'cover' }} className='d-lg-flex d-none'>
+      </Container>
+
+      <Container className='d-flex d-lg-none' style={backgroundStyles}>
       </Container>
     </Container>
   );

@@ -59,28 +59,28 @@ const CentralCommittiees = () => {
           <div class="card mb-3" key={index}>
             <div class="row g-0">
               <div class="col-md-4">
-              <Image
-                    src={post._embedded["wp:featuredmedia"][0].source_url}
-                    alt={post.title.rendered}
+                <Image
+                  src={post._embedded["wp:featuredmedia"][0].source_url}
+                  alt={post.title.rendered}
                   width={200}
                   height={200}
                   className="w-100 h-100"
-                  />
+                />
               </div>
               <div class="col-md-8 wbg-dark text-white">
                 <div class="card-body justify-content-center">
-                  <h5 class="card-title fs-4 fw-500" dangerouslySetInnerHTML={{ __html: post.title.rendered }}/>
+                  <h5 class="card-title fs-4 fw-500" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
                   <p class="card-text fs-5 lh-1 fw-200" dangerouslySetInnerHTML={{ __html: post.acf.honorary }} />
                   <p className="fs-5 lh-1 fw-200" dangerouslySetInnerHTML={{ __html: post.acf.name }} />
-                  <p className="fs-5 lh-1 fw-200" dangerouslySetInnerHTML={{__html: post.acf.excerpt_committee}} />
+                  <p className="fs-5 lh-1 fw-200" dangerouslySetInnerHTML={{ __html: post.acf.excerpt_committee }} />
                 </div>
               </div>
             </div>
           </div>
         ))}
 
-        </Container>
-    
+      </Container>
+
     </>
   );
 };

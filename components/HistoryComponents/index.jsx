@@ -10,14 +10,14 @@ import HistoryContentpart_2 from './HistoryContentpart_2'
 const index = () => {
   return (
     <>
-    
-    <Header />
-    <HistoryBanner />
-    <HistoryContent />
-    <HistoryList />
-    <HistoryContentpart_2 />
-    <Footer/>
-    
+
+      <Header />
+      <HistoryBanner />
+      <HistoryContent />
+      <HistoryList />
+      <HistoryContentpart_2 />
+      <Footer />
+
     </>
   )
 }
