@@ -56,7 +56,7 @@ const CentralCommittiees = () => {
         {posts.map((post, index) => (
 
 
-          <div class="card mb-3">
+          <div class="card mb-3" key={index}>
             <div class="row g-0">
               <div class="col-md-4">
               <Image

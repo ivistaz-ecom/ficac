@@ -29,8 +29,8 @@ const DocumentsList = () => {
     return (
         <>
             <Container className='py-3'>
-                {data.map((items) => (
-                    <Row className='border-2 my-3 p-2'>
+                {data.map((items,index) => (
+                    <Row className='border-2 my-3 p-2' key={index}>
                         <Col lg={8}>
                             <h2 className='fs-4 fw-400'>{items.title.rendered}</h2></Col>
                         <Col lg={4}>
