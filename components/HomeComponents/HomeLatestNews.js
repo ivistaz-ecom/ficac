@@ -85,7 +85,7 @@ const HomeLatestNews = () => {
 
         >
 {isData.map((news) => (
-<div class="card wbg-blue text-white rounded-0 m-1 g-0" key={news.id}>
+<div class="card  text-white rounded-0 m-1 g-0" key={news.id}>
   <div class="row g-0">
     <div class="col-7 g-0">
         <Image
@@ -96,7 +96,7 @@ const HomeLatestNews = () => {
                     class="w-100 h-100"
                   />
     </div>
-    <div class="col-5">
+    <div class="col-5 wbg-blue">
       <div class="card-body">
         <h5 class="card-title" dangerouslySetInnerHTML={{ __html: news.title.rendered }}/>
         <p class="card-text fs-6 fw-200" dangerouslySetInnerHTML={{ __html: news.acf.excerpt }}/>
