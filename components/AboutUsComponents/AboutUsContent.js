@@ -1,15 +1,17 @@
 import React from 'react'
-import { Container , Row , Col } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import Image from 'next/image'
+
+// tst
 
 const HomeBannerContent = () => {
   return (
     <Container fluid className='p-0'>
-    <Container className='p-0'>
+      <Container className='p-0'>
         <Col className='wbg-dark p-4 mt-n1' lg={8} sm={12}>
-        <h1 className='mb-0 bfs-1 text-white lh-1 fw-600'>
-        FICAC Is There<br className='lh-1'/>to Serve Consuls<br className='lh-1'/>All over the World
-        </h1>
+          <h1 className='mb-0 bfs-1 text-white lh-1 fw-600'>
+            FICAC Is There<br className='lh-1' />to Serve Consuls<br className='lh-1' />All over the World
+          </h1>
         </Col>
       </Container>
       <Container className='my-5'>
@@ -18,7 +20,7 @@ const HomeBannerContent = () => {
             <Image src='/about_us_image.png' width={300} height={300} />
           </Col>
           <Col lg={8}>
-          <p className='pt-2 fs-5 lh-2 fw-300 '>FICAC was established in Copenhagen in October 1982. It was born
+            <p className='pt-2 fs-5 lh-2 fw-300 '>FICAC was established in Copenhagen in October 1982. It was born
               of the necessity to bring together Consular Associations or Corps
               from all over the world to share experiences, and co-ordinate
               efforts to enhance the status and effectiveness of the Consul, the
@@ -35,10 +37,10 @@ const HomeBannerContent = () => {
               responsibilities, rights and privileges of Honorary Consuls and
               Career Consuls.</p>
           </Col>
-    </Row>
+        </Row>
 
       </Container>
-</Container>
+    </Container>
   )
 }
 
