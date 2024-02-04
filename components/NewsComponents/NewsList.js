@@ -32,8 +32,8 @@ const NewsList = () => {
     <>
     <Container className='mt-5'>
       <Row className='' >
-        {data.map((post) => (
-          <Col lg={4} className='mt-4'>
+        {data.map((post,index) => (
+          <Col lg={4} className='mt-4' key={index}>
 <div class="card text-center" >
 <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt={post.title.rendered} width={200} height={100} className='w-100 h-100'/>
   <div class="card-body">

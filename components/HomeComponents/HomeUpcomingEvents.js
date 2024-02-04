@@ -66,10 +66,10 @@ const HomeUpcomingEvents = () => {
               dotListClass="custom-dot-list-style"
               itemClass="carousel-item-padding-40-px"
             >
-              {isData.map((post) => (
+              {isData.map((post,index) => (
                 
                 <div
-                  key={post.id}
+                  key={index}
                 >
                   <div class="card border-0">
                 <Image

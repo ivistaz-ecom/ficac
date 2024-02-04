@@ -41,8 +41,8 @@ const BoardOfHonoraryList = () => {
       <Container className='my-5'>
       <h3 className='txt-dark mt-5 mb-0 fs-2' >Honorary Members of the Board of Directors</h3>
         <Row className='d-flex flex-lg-row flex-column'>
-          {posts.map((items) => (
-            <Col lg={3} className='mt-4'>
+          {posts.map((items,index) => (
+            <Col lg={3} className='mt-4' key={index}>
               <div className="card border-0 text-center">
   <Image src={items._embedded['wp:featuredmedia'][0].source_url} alt={items.title.rendered} width={250} height={250} className="w-100 h-100 px-4" />
   <div class="card-body">

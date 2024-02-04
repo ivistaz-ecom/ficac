@@ -27,8 +27,8 @@ const HistoryList = () => {
   return (
     <Container className="px-0">
       <Row className="d-flex flex-lg-row flex-column mb-4">
-        {data.map((post) => (
-          <Col sm={6} lg={4} className="mt-4">
+        {data.map((post, index) => (
+          <Col sm={6} lg={4} className="mt-4" key={index}>
           <div class="card" >
               <Image
                 src={post._embedded["wp:featuredmedia"][0].source_url}

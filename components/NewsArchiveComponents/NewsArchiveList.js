@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
+import configData from "../../config.json";
 
 const NewsArchiveList = () => {
   const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ const NewsArchiveList = () => {
   const fetchData = async () => {
     try {
       let result = await fetch(
-        `https://beta.ficacworld.org/wp-json/wp/v2/posts?categories=16&_embed&per_page=20&page=${page}`
+        `${configData.SERVER_URL}categories=16&_embed&per_page=20&page=${page}`
       );
 
       if (!result.ok) {
@@ -51,8 +52,8 @@ const NewsArchiveList = () => {
       <Container fluid>
         <Container>
           <Col className="mt-lg-5">
-            {data.map((post) => (
-              <Col key={post.id}>
+            {data.map((post,index) => (
+              <Col key={index}>
                 <p
                   className='fs-6 pb-0 mb-2'
                   style={{

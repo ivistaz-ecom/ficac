@@ -28,8 +28,8 @@ const HomeLatestHighlights = () => {
       <Container className=' pb-5 p-0'>
           <h3 className="fs-1 txt-dark text-center py-5">Latest Highlights</h3>
           <Container>
-          {isData.map((post) => (
-<Row className='g-0'>
+          {isData.map((post,index) => (
+<Row className='g-0' key={index}>
 <Col className='' lg={6}>
 <Image src={post._embedded['wp:featuredmedia'][0].source_url}
           alt={post.title.rendered}
