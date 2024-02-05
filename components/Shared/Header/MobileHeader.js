@@ -85,7 +85,7 @@ const MobileHeader = () => {
 
   return (
     <>
-      <Container fluid className="d-flex d-lg-none">
+      <Container fluid className="d-flex d-lg-none z-3">
         <Container>
           <Row>
             <Col className="col-lg-4 d-flex flex-column align-content-center py-3 ">
@@ -106,7 +106,7 @@ const MobileHeader = () => {
       </Container>
 
       {/* Popup Menu */}
-      <Container className="position-fixed">
+      <Container className="position-fixed z-3">
         {isToggleMenuMobile && (
           <>
             <div

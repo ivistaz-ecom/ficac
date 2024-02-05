@@ -7,8 +7,8 @@ const HomeOrganisation = () => {
   return (
     <>
       <Container>
-        <Container className='d-lg-flex d-none'>
-          <Row className='d-lg-flex d-none justify-content-center align-items-center' >
+        <Container className='d-lg-flex d-none flex-column'>
+          <Row className='d-lg-flex d-none flex-row justify-content-center align-items-center' >
             <Col className='text-center' >
               <Link href="https://www.fpa2.org/" target='_blank'>
                 <Image src="/1.svg" alt='' width={200} height={50} className='' />

@@ -41,8 +41,11 @@ const HomeBannerContent = () => {
             <p className='fs-5 fw-300'>
               Each region will be managed by a Regional Chairperson who may be invited to attend the Board meetings and report on the progress in their region.
             </p>
-            <Link href="/ficac-committees/central-committees" className='btn btn-blue mx-3 px-3 py-2 fw-200'>Central Committees</Link>
-            <Link href="/ficac-committees/regions-committees" className='btn btn-border px-3 py-2s fw-200'>Regions Committees</Link>
+
+            <div className='d-flex flex-row gap-2'>
+              <Link href="/ficac-committees/central-committees" className='btn btn-border px-3 py-2 fw-200 d-inline-block'>Central Committees</Link>
+              <Link href="/ficac-committees/regions-committees" className='btn btn-border px-3 py-2 fw-200'>Regions Committees</Link>
+            </div>
           </Col>
         </Row>
 
