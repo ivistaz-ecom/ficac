@@ -29,14 +29,16 @@ const HistoryList = () => {
       <Row className="d-flex flex-lg-row flex-column mb-4 p-0 m-0">
         {data.map((post, index) => (
           <Col sm={6} lg={4} className="mt-4 p-2" key={index}>
-            <div class="card" >
-              <Image
-                src={post._embedded["wp:featuredmedia"][0].source_url}
-                alt={post.title.rendered}
-                className="card-img-top w-100 h-100"
-                width={300}
-                height={300}
-              />
+            <div class="card p-4" >
+              <div>
+                <Image
+                  src={post._embedded["wp:featuredmedia"][0].source_url}
+                  alt={post.title.rendered}
+                  className="card-img-top w-100 h-100"
+                  width={300}
+                  height={300}
+                />
+              </div>
               <div class="card-body">
                 <h5 class="card-title fs-5 fw-200 txt-blue" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
                 <p class="card-text fs-5 fw-600 txt-blue" >{post.acf.year}</p>

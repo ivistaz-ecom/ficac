@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Image from 'next/image'
 import Link from 'next/link'
@@ -14,9 +14,35 @@ function NavBar() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 100;
+      setScrolled(isScrolled);
+
+      // Get the navbar-collapse element
+      const navbarCollapse = document.getElementById('navbarSupportedContent');
+
+      // Apply styles to the collapsed menu based on the scroll state
+      if (navbarCollapse) {
+        navbarCollapse.style.backgroundColor = isScrolled ? '#001C79' : 'transparent ';
+        navbarCollapse.style.padding = isScrolled ? '10px' : '0'; // Add padding when scrolled
+        // Add other styles as needed
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <Container className='head-container p-0 z-3' fluid>
+      <Container className='head-container p-0 z-3 position-fixed' fluid>
         <Container fluid className='g-0 d-lg-flex d-none w-100'>
           <Container>
             <nav class="navbar navbar-expand-lg navbar-light">
