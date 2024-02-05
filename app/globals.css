@@ -70,6 +70,10 @@ line-height: 1.3em;
  min-height:80px; 
 }
 
+.bg-blue {
+  background: #001C79;
+}
+
 .navbar-collapse {
   flex-basis: unset !important; 
   flex-grow: 0 !important;
@@ -142,6 +146,11 @@ border: 1px solid #001C79;
 .active{
   background-color: #001C79;
 }
+
+.active-menu {
+  border-bottom: 3px solid #001C79;
+}
+
 .active-white{
   background-color: #fff;
   color:#001C79 !important;
@@ -352,4 +361,15 @@ i.bi.bi-chevron-up {
 .two-line-paragraph::after {
   content: '...';
   display: inline-block;
+}
+
+
+.scroll-bg-color {
+  background-color: orange; /* Replace with the color you want */
+  transition: background-color 0.3s ease; /* Optional: Add a smooth transition effect */
+}
+
+.header {
+  height: 50px; /* Adjust the height of your header */
+  transition: background-color 0.5s ease; /* Smooth transition for background color change */
 }

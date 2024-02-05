@@ -16,9 +16,9 @@ function NavBar() {
 
   return (
     <>
-      <Container className='head-container p-0' fluid>
-        <Container className='g-0 d-lg-flex d-none'>
-          <Col>
+      <Container className='head-container p-0 z-3' fluid>
+        <Container fluid className='g-0 d-lg-flex d-none w-100'>
+          <Container>
             <nav class="navbar navbar-expand-lg navbar-light">
               <div class="container-fluid">
                 <Link href="/" className="text-decoration-none navbar-brand">
@@ -42,13 +42,13 @@ function NavBar() {
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <Link class={pathname == "/news" ? "active nav-link poppins" : "nav-link poppins"} href="/news" >FICAC News</Link>
+                      <Link class={pathname == "/news" ? "active-menu nav-link poppins" : "nav-link poppins"} href="/news" >FICAC News</Link>
                     </li>
                     <li class="nav-item">
-                      <Link class={pathname == "/membership" ? "active nav-link poppins" : "nav-link poppins"} href="/membership"  >Membership</Link>
+                      <Link class={pathname == "/membership" ? "active-menu nav-link poppins" : "nav-link poppins"} href="/membership"  >Membership</Link>
                     </li>
                     <li class="nav-item">
-                      <Link class={pathname == "/contact" ? "active nav-link poppins" : "nav-link poppins"} href="/contact" >Contact Us</Link>
+                      <Link class={pathname == "/contact" ? "active-menu nav-link poppins" : "nav-link poppins"} href="/contact" >Contact Us</Link>
                     </li>
                   </ul>
                   <div class="d-flex mx-4" style={{ cursor: 'pointer' }}>
@@ -79,7 +79,7 @@ function NavBar() {
                 </ul>
               </Offcanvas.Body>
             </Offcanvas>
-          </Col>
+          </Container>
         </Container>
 
         {/* <Container className=''> */}

@@ -30,7 +30,7 @@ const HomeBanner = () => {
 
 
   const backgroundStyles = {
-    height: isMobile ? '300px' : '90vh',
+    height: isMobile ? '350px' : '90vh',
     fontSize: '50px',
     width: '100%',
     backgroundSize: isMobile ? 'cover' : 'cover',

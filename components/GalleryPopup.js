@@ -18,8 +18,18 @@ const GalleryPopup = ({ selectedImage, closeSelectedImage, handlePreviousImage, 
             >
             </span>
             <div className='p-3'>
-                <div className='position-absolute top-50 start-50 translate-middle z-3'>
+                <div className='position-absolute top-50 start-50 translate-middle z-3 d-lg-flex d-none'>
                     <div>
+                        <Image
+                            src={selectedImage.full_image_url}
+                            alt=""
+                            width="100%"
+                            style={{ objectFit: 'cover', objectPosition: 'center center' }}
+                        />
+                    </div>
+                </div>
+                <div className='d-flex d-lg-none position-absolute bottom-0  top-0 start-0 end-0 '>
+                    <div className='d-flex flex-column justify-content-center'>
                         <Image
                             src={selectedImage.full_image_url}
                             alt=""
@@ -33,12 +43,12 @@ const GalleryPopup = ({ selectedImage, closeSelectedImage, handlePreviousImage, 
             <div>
                 <div className='position-absolute top-50 start-0 d-flex flex-row align-items-center justify-content-center'>
                     <i className="bi bi-arrow-left-circle-fill fs-3 p-2 text-white cursor-pointer align-items-center" onClick={handlePreviousImage}></i>
-                    <p className='fs-5 p-2 text-white cursor-pointer align-items-center mb-0'>
+                    <p className='fs-5 p-2 text-white cursor-pointer align-items-center mb-0 d-lg-flex d-none'>
                         &nbsp; Previous
                     </p>
                 </div>
                 <div className='position-absolute top-50 end-0 d-flex flex-row align-items-center justify-content-center'>
-                    <p className='fs-5 p-2 text-white cursor-pointer align-items-center mb-0'>Next &nbsp;
+                    <p className='fs-5 p-2 text-white cursor-pointer align-items-center mb-0 d-lg-flex d-none'>Next &nbsp;
                     </p>
                     <i className="bi bi-arrow-right-circle-fill fs-3 p-2 text-white cursor-pointer" onClick={handleNextImage}></i>
                 </div>
