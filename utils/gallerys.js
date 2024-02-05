@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import {Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
 import GalleryPopup from '../components/GalleryPopup'; // Adjust the path based on your project structure
 import configData from "../config.json";
@@ -301,7 +301,6 @@ const Post = ({ slug }) => {
                                                                 className="w-100 cursor-pointer"
                                                                 style={{ objectFit: 'cover', objectPosition: 'center center' }}
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_1', '0')}
-                                                                
                                                             />
                                                         </Col>
 
@@ -348,7 +347,6 @@ const Post = ({ slug }) => {
                                                                     objectPosition: 'center center'
                                                                 }}
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_2', '1')}
-                                                                
                                                             />
                                                         </Col>
 
@@ -366,7 +364,6 @@ const Post = ({ slug }) => {
                                                 ))}
                                             </Row>
                                         </Col>
-
 
                                         <Col className="pt-5 mb-4">
                                             {/* <h1 className="fw-bold" dangerouslySetInnerHTML={{ __html: post.title.rendered }} /> */}
@@ -393,7 +390,6 @@ const Post = ({ slug }) => {
                                                                 style={{ objectFit: 'cover', objectPosition: 'center center' }}
                                                                 // onClick={() => openSelectedImage(photo, index)}
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_3', '2')}
-                                                                
                                                             />
                                                         </Col>
 
@@ -436,7 +432,7 @@ const Post = ({ slug }) => {
                                                                 className="w-100 h-auto cursor-pointer"
                                                                 style={{ objectFit: 'cover', objectPosition: 'center center' }}
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_4', '3')}
-                                                                
+
                                                             />
                                                         </Col>
 
@@ -479,7 +475,7 @@ const Post = ({ slug }) => {
                                                                 className="w-100 h-auto cursor-pointer"
                                                                 style={{ objectFit: 'cover', objectPosition: 'center center' }}
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_5', '4')}
-                                                                
+
                                                             />
                                                         </Col>
 
@@ -528,10 +524,10 @@ const Post = ({ slug }) => {
                                                             alt=""
                                                             width={280}
                                                             height={280}
-                                                                className="w-100 h-auto cursor-pointer"
+                                                            className="w-100 h-auto cursor-pointer"
                                                             style={{ objectFit: 'cover', objectPosition: 'center center' }}
                                                             onClick={() => openSelectedImage(photo, index)}
-                                                            
+
                                                         />
                                                     </Col>
 
@@ -541,7 +537,7 @@ const Post = ({ slug }) => {
                                                             alt=""
                                                             width={280}
                                                             height={280}
-                                                                className="w-100 h-auto cursor-pointer"
+                                                            className="w-100 h-auto cursor-pointer"
                                                             onClick={() => openSelectedImage(photo, index)}
                                                         />
                                                     </Col>
