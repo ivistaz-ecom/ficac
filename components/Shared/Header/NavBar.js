@@ -52,7 +52,8 @@ function NavBar() {
                     </li>
                   </ul>
                   <div class="d-flex mx-4" style={{ cursor: 'pointer' }}>
-                    <FaBarsStaggered size={25} color={'white'} style={{ marginLeft: '30px' }} onClick={handleShow} />
+                    {/* <FaBarsStaggered size={25} color={'white'} style={{ marginLeft: '30px' }} onClick={handleShow} /> */}
+                    <i class="bi bi-list text-white" style={{ fontSize: '30px', marginLeft: '30px' }} onClick={handleShow}></i>
                   </div>
                 </div>
               </div>

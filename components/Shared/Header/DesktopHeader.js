@@ -41,7 +41,6 @@ const DesktopHeader = () => {
     setIsOnclick2(false);
     setIsOnclick3(false);
     setIsToogleMenu(false);
-
   };
 
   const handleOnclick1 = () => {
