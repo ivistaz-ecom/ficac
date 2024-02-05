@@ -29,7 +29,7 @@ const HomeBanner = () => {
   }, []);
 
   const backgroundStyles = {
-    height: isMobile ? '208px' : '90vh',
+    height: isMobile ? '258px' : '90vh',
     fontSize: '50px',
     width: '100%',
     backgroundSize: isMobile ? 'cover' : 'cover',
@@ -43,7 +43,7 @@ const HomeBanner = () => {
   return (
     <>
       <Container fluid className='px-lg-5 p-0'>
-        <Container fluid style={{ backgroundImage: 'url(/banner_images/event_page_banner.jpg)', height: '750px', backgroundSize: 'cover' }} className='d-lg-flex d-none'>
+        <Container fluid style={{ backgroundImage: 'url(/banner_images/event_page_banner.jpg)', height: '90vh', backgroundSize: 'cover' }} className='d-lg-flex d-none'>
         </Container>
 
         <Container fluid className='d-lg-none d-flex' style={backgroundStyles}>

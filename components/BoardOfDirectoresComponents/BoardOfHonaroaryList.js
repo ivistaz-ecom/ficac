@@ -49,7 +49,7 @@ const BoardOfHonoraryList = () => {
                   <div class="card-body">
                     <h5 class="card-title fw-400 txt-blue">{items.acf.designation}</h5>
                     <p class="card-text fs-6" style={{ minHeight: '60px' }}>{items.acf.name}</p>
-                    <a href={items.acf.pdf_url} target="_blank" rel="noopener noreferrer" class="btn btn-primary wbg-blue border-0">Read more</a>
+                    <a href={items.acf.pdf_url} target="_blank" rel="noopener noreferrer" class="btn btn-primary wbg-blue border-0">Read More</a>
                   </div>
                 </div>
               </Col>

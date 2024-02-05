@@ -27,7 +27,7 @@ const HomeLatestHighlights = () => {
   return (
     <>
       <Container className='pb-5 p-0'>
-        <h3 className="fs-1 txt-dark text-center py-5">Latest Highlights</h3>
+        <h3 className="fs-1 txt-dark text-center py-lg-5 py-3">Latest Highlights</h3>
         <Container>
           {isData.map((post, index) => (
             <Row className='g-0 d-flex flex-lg-row flex-column' key={index}>

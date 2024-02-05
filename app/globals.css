@@ -8,9 +8,15 @@
   font-family: 'Poppins', sans-serif;
 }
   body {
-    background: #E4E8F5;
+    /* background: #E4E8F5; */
+    background: #F7F9FF;
   }
 
+  /* @media(min-width:1560px){
+    .container {
+      width: 100% !important;
+    }
+ } */
 .fw-100{
   font-weight: 100;
 }
@@ -68,6 +74,10 @@ line-height: 1.3em;
 }
 .mh-104{
  min-height:80px; 
+}
+
+.bg-blue {
+  background: #001C79;
 }
 
 .navbar-collapse {
@@ -142,6 +152,11 @@ border: 1px solid #001C79;
 .active{
   background-color: #001C79;
 }
+
+.active-menu {
+  border-bottom: 3px solid #001C79;
+}
+
 .active-white{
   background-color: #fff;
   color:#001C79 !important;
@@ -352,4 +367,8 @@ i.bi.bi-chevron-up {
 .two-line-paragraph::after {
   content: '...';
   display: inline-block;
+}
+
+.btn-latest-news {
+  background-color: #fff;
 }
