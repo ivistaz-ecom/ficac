@@ -37,8 +37,8 @@ const HomeBanner = () => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: isMobile ? 'center center' : 'initial',
     backgroundImage: isMobile
-      ? "url('/banner_images/home_page_banner.jpg')"
-      : "url('/banner_images/home_page_banner.jpg')",
+      ? "url('/banner_images/home_banner_new.png')"
+      : "url('/banner_images/home_banner_new.png')",
   };
 
   return (
