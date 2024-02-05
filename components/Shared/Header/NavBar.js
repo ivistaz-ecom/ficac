@@ -53,7 +53,10 @@ function NavBar() {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown poppins">
-                      <Link class={pathname == "/about" ? "active nav-link dropdown-toggle" : "nav-link dropdown-toggle"} href="/about" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <Link
+                        class={pathname == "/about" ? " nav-link dropdown-toggle" : "nav-link dropdown-toggle"}
+                        href="/about"
+                        id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         About
                       </Link>
                       <ul class="dropdown-menu poppins" aria-labelledby="navbarDropdown">

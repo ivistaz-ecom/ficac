@@ -164,6 +164,10 @@ border: 1px solid #001C79;
 /* jalal create end here */
 
 
+a.active-menu.nav-link:focus {
+  color: white;
+}
+
 
 .container {
   width: 1080px;
