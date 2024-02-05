@@ -372,3 +372,20 @@ i.bi.bi-chevron-up {
 .btn-latest-news {
   background-color: #fff;
 }
+
+
+.your-custom-class {
+  /* Your default styles here */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+/* Add styles when scrolled */
+.your-custom-class.scrolled {
+  background-color: #YourNewColor;
+  /* Add any other styles you want to apply when scrolled */
+}
