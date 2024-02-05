@@ -36,10 +36,10 @@ const HomeBannerContent = () => {
 
                               <p className='fs-5 fw-600'>FICAC aisbl</p>
                               <p className='fs-5 fw-600 lh-1'>Hon. Purrshottam Bhaggeria, Secretary General</p>
-                              <p className='fs-5 fw-300 lh-1'>Email: <Link href="mailto:secretary.general@ficacworld.org">secretary.general@ficacworld.org</Link></p>
+                              <p className='fs-5 fw-300 lh-1'>Email: <Link href="mailto:secretary.general@ficacworld.org" className='text-decoration-none'>secretary.general@ficacworld.org</Link></p>
                               <p className='fs-5 fw-600 lh-1'>Secretary’s General Office</p>
                               <p className='fs-5 fw-600 lh-1'>Sunil Kunj (Mr)</p>
-                              <p className='fs-5 fw-300 lh-1'>Email:<Link href="mailto:secretary.general.office@ficacworld.org"> secretary.general.office@ficacworld.org</Link></p>
+                              <p className='fs-5 fw-300 lh-1'>Email:<Link href="mailto:secretary.general.office@ficacworld.org" className='text-decoration-none'> secretary.general.office@ficacworld.org</Link></p>
                               <p className='fs-5 fw-300 lh-1'>Tel.: +91-11-49502068 Mobile & WhatsApp: +91-9910566559</p>
                               <p className='fs-5 fw-300 lh-1'>Office: “Bhaggeria House”, 43 Community Centre, New Friends Colony, New Delhi-110025, India</p>
 

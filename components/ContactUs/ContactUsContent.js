@@ -6,30 +6,30 @@ import Link from 'next/link'
 const HomeBannerContent = () => {
   return (
     <Container fluid className='p-0'>
-    <Container className='p-0'>
+      <Container className='p-0'>
         <Col className='wbg-dark p-4 mt-n1' lg={6} sm={12}>
-        <h1 className='mb-0 bfs-1 text-white fw-600'>
-        Contact Us
-        </h1>
+          <h1 className='mb-0 bfs-1 text-white fw-600'>
+            Contact Us
+          </h1>
         </Col>
       </Container>
       <Container className='my-5'>
         <Row>
           <Col></Col>
           <Col lg={8}>
-          <h3 className='fs-2 fw-500'>
-          FICAC AISBL, Office of the President
+            <h3 className='fs-2 fw-500'>
+              FICAC AISBL, Office of the President
             </h3>
             <p className='fs-5 fw-300'>
-            “World Federation of Consuls” Permanent Secretariat IT TOWER, 480 Avenue Louise, 1050 Brussels - Belgium
+              “World Federation of Consuls” Permanent Secretariat IT TOWER, 480 Avenue Louise, 1050 Brussels - Belgium
             </p>
             <p className='fs-5 fw-300'>
-            E-mail: <Link href="mailto:info@ficacworld.org" className='txt-blue'>info@ficacworld.org</Link>
+              E-mail: <Link href="permanent.secretariat@ficacworld.org" className='txt-blue text-decoration-none'>permanent.secretariat@ficacworld.org</Link>
             </p>
           </Col>
         </Row>
       </Container>
-</Container>
+    </Container>
   )
 }
 

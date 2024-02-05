@@ -36,17 +36,17 @@ const HomeBanner = () => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: isMobile ? 'center center' : 'initial',
     backgroundImage: isMobile
-      ? "url('/banner_images/home_page_banner.jpg')"
-      : "url('/banner_images/home_page_banner.jpg')",
+      ? "url('/banner_images/commitees.png')"
+      : "url('/banner_images/commitees.png')",
   };
 
   return (
     <>
-      <Container fluid className='px-5 '>
-        <Container fluid style={{ backgroundImage: 'url(/commitees.png)', height: '750px', backgroundSize: 'cover' }} className='d-lg-flex d-none'>
+      <Container fluid className='px-lg-5 p-0'>
+        <Container fluid style={{ backgroundImage: 'url(/banner_images/commitees.png)', height: '750px', backgroundSize: 'cover' }} className='d-lg-flex d-none'>
         </Container>
 
-        <Container className='d-lg-none d-flex'>
+        <Container className='d-lg-none d-flex' style={backgroundStyles}>
 
         </Container>
       </Container>

@@ -42,7 +42,7 @@ const HomeBanner = () => {
 
   return (
     <Container fluid className='px-lg-5 p-0'>
-      <Container fluid style={{ backgroundImage: 'url(/mission_vision.png)', height: '750px', backgroundSize: 'cover' }} className='d-lg-flex d-none'>
+      <Container fluid style={{ backgroundImage: 'url(/banner_images/mission_vission_page_banner.jpg)', height: '750px', backgroundSize: 'cover' }} className='d-lg-flex d-none'>
       </Container>
 
       <Container className='d-flex d-lg-none' style={backgroundStyles}>
