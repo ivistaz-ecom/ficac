@@ -29,18 +29,29 @@ const HomeBanner = () => {
   }, []);
 
 
+  // const backgroundStyles = {
+  //   height: isMobile ? '280px' : '90vh',
+  //   fontSize: '50px',
+  //   width: '100%',
+  //   backgroundSize: isMobile ? 'cover' : 'cover',
+  //   backgroundRepeat: 'no-repeat',
+  //   backgroundPosition: isMobile ? 'center center' : 'initial',
+  //   backgroundImage: isMobile
+  //     ? "url('/banner_images/home_page_banner.jpg')"
+  //     : "url('/banner_images/home_page_banner.jpg')",
+  // };
+
   const backgroundStyles = {
-    height: isMobile ? '280px' : '90vh',
+    height: isMobile ? '258px' : '90vh',
     fontSize: '50px',
     width: '100%',
     backgroundSize: isMobile ? 'cover' : 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: isMobile ? 'center center' : 'initial',
     backgroundImage: isMobile
-      ? "url('/banner_images/home_banner_new.png')"
-      : "url('/banner_images/home_banner_new.png')",
+      ? "url('/banner_images/home_banner.jpg')"
+      : "url('/banner_images/home_banner.jpg')",
   };
-
   return (
     <Container fluid className='px-lg-5 p-0'>
       {/* <Container fluid style={{ backgroundImage: 'url(/home_banner.png)', height: '', backgroundSize: 'cover' }}> */}
