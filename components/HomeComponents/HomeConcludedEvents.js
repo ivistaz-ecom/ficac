@@ -93,7 +93,10 @@ const HomeConcludedEvents = () => {
                 <div class="card-body text-center">
                   <h5 class="card-title txt-dark fw-400 text-start mh-104" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
                   <p class="card-text fs-5 fw-300 text-start p-3">FICAC, the World Federation of Consuls had its 1st Latin America Conference in San Pedro Sula, Honduras, from August 31st, 2023- September 3rd 2023, which was organized by the Association Consular Corps of San Pedro Sula.</p>
-                  <Link href={post.acf.url} class="btn wbg-blue py-2 px-3 m-2 text-white btn-primary border-0">Read more</Link>
+                  {/* <p class="card-text fs-5 fw-300 text-start p-3">
+                    {post.acf.excerpt}
+                  </p> */}
+                  <Link href={post.acf.url} class="btn wbg-blue py-2 px-3 m-2 text-white btn-primary border-0" target="_blank">Read More</Link>
                 </div>
               </div></Col>
           </div>

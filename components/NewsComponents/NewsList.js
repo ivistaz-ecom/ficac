@@ -44,7 +44,7 @@ const NewsList = () => {
                       <p class="card-text text-start fs-5 fw-300 two-line-paragraph"
                         style={{ color: "#001C79" }} dangerouslySetInnerHTML={{ __html: post.acf.excerpt }} />
                     )}
-                    <Link href={`/news/${post.slug}`} target='_blank' className='btn btn-primary wbg-blue border-0 px-3 py-2 mt-3'>Read more</Link>
+                    <Link href={`/news/${post.slug}`} target='_blank' className='btn btn-primary wbg-blue border-0 px-3 py-2 mt-3'>Read More</Link>
                   </div>
                 </div>
               </Col>

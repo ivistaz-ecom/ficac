@@ -64,7 +64,7 @@ const HomeLatestNews = () => {
   return (
     <>
       <Container className=''>
-        <h3 className="fs-1 txt-dark text-center py-5">Latest News</h3>
+        <h3 className="fs-1 txt-dark text-center py-lg-5">Latest News</h3>
         <Carousel
           swipeable={true}
           draggable={false}
@@ -100,7 +100,9 @@ const HomeLatestNews = () => {
                   <div class="card-body">
                     <h5 class="card-title" dangerouslySetInnerHTML={{ __html: news.title.rendered }} />
                     <p class="card-text fs-6 fw-200" dangerouslySetInnerHTML={{ __html: news.acf.excerpt }} />
-                    <Link className="text-decoration-none btn wbg-white text-blue p-2" href={`/news/${news.slug}`}>Read more</Link>
+                    <div className='text-center'>
+                      <Link className="text-decoration-none btn-latest-news txt-blue py-2 px-3 rounded-2 text-center" target='_blank' href={`/news/${news.slug}`}>Read More</Link>
+                    </div>
                   </div>
                 </div>
               </div>

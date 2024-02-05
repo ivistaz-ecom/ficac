@@ -8,7 +8,7 @@ const HomeBannerContent = () => {
     <Container fluid className='p-0'>
       <Container className='p-0'>
         <Col className='wbg-dark p-4 mt-n1' lg={8} sm={12}>
-          <h1 className='mb-0 bfs-1 text-white lh-1 fw-600'>
+          <h1 className='mb-0 bfs-1 text-white lh-1'>
             FICAC Is There<br className='lh-1' />to Serve Consuls<br className='lh-1' />All over the World
           </h1>
         </Col>

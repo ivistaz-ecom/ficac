@@ -6,7 +6,7 @@ const CentralCommitteesBannerContent = () => {
     <Container fluid className='p-0 mb-5'>
       <Container className='p-0'>
         <Col className='wbg-dark p-4 mt-n1' lg={6} sm={12}>
-          <h1 className='mb-0 bfs-1 text-white fw-600'>
+          <h1 className='mb-0 bfs-1 text-white'>
             Central
             <br className='lh-1' />
             Committees

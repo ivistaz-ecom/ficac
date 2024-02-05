@@ -8,9 +8,15 @@
   font-family: 'Poppins', sans-serif;
 }
   body {
-    background: #E4E8F5;
+    /* background: #E4E8F5; */
+    background: #F7F9FF;
   }
 
+  /* @media(min-width:1560px){
+    .container {
+      width: 100% !important;
+    }
+ } */
 .fw-100{
   font-weight: 100;
 }
@@ -363,13 +369,6 @@ i.bi.bi-chevron-up {
   display: inline-block;
 }
 
-
-.scroll-bg-color {
-  background-color: orange; /* Replace with the color you want */
-  transition: background-color 0.3s ease; /* Optional: Add a smooth transition effect */
-}
-
-.header {
-  height: 50px; /* Adjust the height of your header */
-  transition: background-color 0.5s ease; /* Smooth transition for background color change */
+.btn-latest-news {
+  background-color: #fff;
 }

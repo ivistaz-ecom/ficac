@@ -43,13 +43,13 @@ const HomeUpcomingEvents = () => {
 
 
   return (
-    <Container fluid  className='wbg-light p-4'>
+    <Container fluid className='wbg-light p-4'>
       <Container>
-        
+
         <Row>
-          <Col lg={4}>
-          <h3 className="fs-1 txt-dark text-center py-5">Upcoming Events </h3>
-          <Carousel
+          <Col lg={4} className=''>
+            <h3 className="fs-1 txt-dark text-center py-5">Upcoming Events </h3>
+            <Carousel
               swipeable={true}
               draggable={false}
               showDots={false}
@@ -66,32 +66,33 @@ const HomeUpcomingEvents = () => {
               dotListClass="custom-dot-list-style"
               itemClass="carousel-item-padding-40-px"
             >
-              {isData.map((post,index) => (
-                
+              {isData.map((post, index) => (
+
                 <div
                   key={index}
                 >
                   <div class="card border-0">
-                <Image
-                    src={post._embedded["wp:featuredmedia"][0].source_url}
-                    
-                    width={300}
-                    height={300}
-                    className="w-100 h-auto card-img-top"
-                  />
-  <div class="card-body text-center mb-5 pb-5">
-  {/* <h5 class="card-title txt-dark fw-400 text-start mh-104" dangerouslySetInnerHTML={{ __html: post.title.rendered }}/> */}
-    <p class="card-text fs-5 fw-300 my-5 p-2 pb-3" >FICAC, the World Federation of Consuls had its 1st Latin America Conference in San Pedro Sula, Honduras, from August 31st, 2023- September 3rd 2023, which was organized by the Association Consular Corps of San Pedro Sula.</p>          
-    {/* <Link href={post.acf.url} class="btn btn-primary p-3">Read more</Link> */}
-  </div>
-</div>
+                    <Image
+                      src={post._embedded["wp:featuredmedia"][0].source_url}
+                      alt=''
+                      width={300}
+                      height={300}
+                      className="w-100 h-auto card-img-top"
+                    />
+                    <div class="card-body text-center mb-5 pb-5">
+                      {/* <h5 class="card-title txt-dark fw-400 text-start mh-104" dangerouslySetInnerHTML={{ __html: post.title.rendered }}/> */}
+                      <p class="card-text fs-5 fw-300 my-5 p-2 pb-3">FICAC, the World Federation of Consuls had its 1st Latin America Conference in San Pedro Sula, Honduras, from August 31st, 2023- September 3rd 2023, which was organized by the Association Consular Corps of San Pedro Sula.</p>
+                      {/* <p class="card-text fs-5 fw-300 my-5 p-2 pb-3">{post.acf.excerpt}</p> */}
+                      {/* <Link href={post.acf.url} class="btn btn-primary p-3">Read more</Link> */}
+                    </div>
+                  </div>
                 </div>
               ))}
 
             </Carousel>
           </Col>
           <HomeConcludedEvents />
-       </Row>
+        </Row>
 
       </Container>
 

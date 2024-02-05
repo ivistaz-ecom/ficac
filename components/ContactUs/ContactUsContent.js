@@ -8,7 +8,7 @@ const HomeBannerContent = () => {
     <Container fluid className='p-0'>
       <Container className='p-0'>
         <Col className='wbg-dark p-4 mt-n1' lg={6} sm={12}>
-          <h1 className='mb-0 bfs-1 text-white fw-600'>
+          <h1 className='mb-0 bfs-1 text-white'>
             Contact Us
           </h1>
         </Col>
