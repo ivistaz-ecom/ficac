@@ -393,3 +393,14 @@ i.bi.bi-chevron-up {
   background-color: #YourNewColor;
   /* Add any other styles you want to apply when scrolled */
 }
+
+/* news archieve */
+
+.news-hover:hover {
+  background: #E4E8F5;
+  /* color: white !important; */
+}
+
+.news-hover:hover a{
+  /* color: white !important; */
+}
