@@ -53,28 +53,29 @@ const NewsList = () => {
 
         </Row>
       </Container>
-      {/* <Container className='mt-5'>
-    <Row>
-   <Col className='d-flex justify-content-center mb-4  d-inline-flex gap-1'   >
-                <Link href="/news-archive"
+
+      {/* News Archive */}
+      <Container className='mt-5'>
+        <Row>
+          <Col className='d-flex justify-content-center mb-4  d-inline-flex gap-1'   >
+            <Link href="/news-archive"
+              style={{
+                textDecoration: "none",
+                color: "white",
+
+              }}>
+              <p className='p-2 d-inline-flex rounded-2 '
                 style={{
-                  textDecoration:"none",
-                  color:"white",
-                  
-                }}>
-                <p className='p-2 d-inline-flex rounded-2 '
-                style={{backgroundColor:"#001C79",
-          }}
-                >
-                  News Archive 
-                
-            
+                  backgroundColor: "#001C79",
+                }}
+              >
+                News Archive
                 <i class="bi bi-arrow-right mx-1"></i>
-                </p>
-                </Link>
-                </Col>
-   </Row>
-    </Container> */}
+              </p>
+            </Link>
+          </Col>
+        </Row>
+      </Container>
     </>
 
   )

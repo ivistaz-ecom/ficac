@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import {Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link'
 import configData from "../config.json";
 import Image from 'next/image'
@@ -96,14 +96,14 @@ const Post = ({ slug }) => {
                           }}
                         >
                           <Image src={photo.full_image_url}
-                          
+
                             alt=""
                             width={280}
                             height={280}
                             className="w-100 h-auto cursor-pointer"
                             style={{ objectFit: 'cover', objectPosition: 'center center' }}
                             onClick={() => openSelectedImage(photo)}
-                            
+
                           />
                         </Col>
 
@@ -114,9 +114,9 @@ const Post = ({ slug }) => {
                           className='p-0 d-lg-none d-block mt-3'
                         >
                           <Image src={photo.full_image_url} alt=""
-                          width={280}
-                          height={280}
-                          className="w-100 h-auto cursor-pointer"
+                            width={280}
+                            height={280}
+                            className="w-100 h-auto cursor-pointer"
                           />
                         </Col>
 
@@ -139,9 +139,9 @@ const Post = ({ slug }) => {
                           }}
                         >
                           <Image src={photo.full_image_url} alt=""
-                          width={280}
-                          height={280}
-                          className="w-100 h-auto cursor-pointer"
+                            width={280}
+                            height={280}
+                            className="w-100 h-auto cursor-pointer"
                           />
                         </Col>
 
@@ -152,9 +152,9 @@ const Post = ({ slug }) => {
                           className='p-0 d-lg-none d-block mt-3'
                         >
                           <Image src={photo.full_image_url} alt=""
-                          width={280}
-                          height={280}
-                          className="w-100 h-auto cursor-pointer"
+                            width={280}
+                            height={280}
+                            className="w-100 h-auto cursor-pointer"
                           />
                         </Col>
 
@@ -182,8 +182,8 @@ const Post = ({ slug }) => {
                   src={selectedImage.full_image_url}
                   alt=""
                   width={280}
-                            height={280}
-                            className="w-100 cursor-pointer"
+                  height={280}
+                  className="w-100 cursor-pointer"
                   style={{ objectFit: 'cover', objectPosition: 'center center' }}
                 />
               </div>

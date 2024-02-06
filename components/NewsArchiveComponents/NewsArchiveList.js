@@ -6,128 +6,101 @@ import configData from "../../config.json";
 
 const NewsArchiveList = () => {
   const [data, setData] = useState([]);
-  const [page, setPage] = useState(1);
-  const totalPages = 18; // Manually set the total number of pages based on your data
-  const neighboringPages = 0; // Number of neighboring page numbers to display
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
-  const fetchData = async () => {
+  const postsPerPage = 15;
+
+  const fetchData = async (page) => {
     try {
-      let result = await fetch(`${configData.SERVER_URL}categories=16&_embed&per_page=20&page=${page}`);
+      let result = await fetch(`${configData.SERVER_URL}posts?categories=16&_embed&page=${page}&per_page=${postsPerPage}`);
 
       if (!result.ok) {
         throw new Error(`HTTP error! Status: ${result.status}`);
       }
+      const totalPagesHeader = result.headers.get('X-WP-TotalPages');
+      setTotalPages(parseInt(totalPagesHeader, 10) || 1);
 
       result = await result.json();
       setData(result);
+      console.log(result);
     } catch (error) {
       console.error('Error fetching data', error);
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, [page]); // Re-fetch data when the page changes
-
-  const handleNextPage = () => {
-    if (page < totalPages) {
-      setPage((prevPage) => prevPage + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (page > 1) {
-      setPage((prevPage) => prevPage - 1);
-    }
-  };
-
   const handlePageChange = (newPage) => {
-    setPage(newPage);
+    setCurrentPage(newPage);
+    fetchData(newPage);
   };
+
+  useEffect(() => {
+    fetchData(currentPage);
+  }, [currentPage]);
+
 
   return (
     <>
       <Container fluid>
         <Container>
           <Col className="mt-lg-5">
-            {data.map((post,index) => (
-              <Col key={index}>
-                <p
-                  className='fs-6 pb-0 mb-2'
-                  style={{
-                    color: '#0A0A0A',
-                  }}
-                >
-                  {new Date(post.date).toLocaleDateString()}
-                </p>
-                <Link
-                  href={`/news-archive/${post.slug}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ textDecoration: 'none' }}
-                >
+            {data.map((post, index) => (
+              <div key={index}>
+                <div className='news-hover p-3'>
                   <p
-                    className='fs-5 text-black'
-                    dangerouslySetInnerHTML={{
-                      __html: post.title.rendered.toUpperCase(),
+                    className='fs-5 fw-300'
+                  >
+                    {new Date(post.date).toLocaleDateString()}
+                  </p>
+                  <Link
+                    href={`/news-archive/${post.slug}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none' }}
+                    className='text-decoration-none text-black'
+                  >
+                    <p
+                      className='fs-5'
+                      dangerouslySetInnerHTML={{
+                        __html: post.title.rendered.toUpperCase(),
+                      }}
+                    />
+                  </Link>
+
+                  <hr
+                    className=''
+                    style={{
+                      height: '3px',
+                      width: '15%',
+                      backgroundColor: '#2680EB',
                     }}
                   />
-                </Link>
-                <hr
-                  className=''
-                  style={{
-                    color: '#001C79',
-                    height: '3px',
-                    width: '140px',
-                    backgroundColor: '#001C79',
-                  }}
-                />
-              </Col>
+                </div>
+              </div>
             ))}
-            <Row>
-              <Col className='mb-3 mt-5'>
-                <p
-                  onClick={handlePrevPage}
-                  disabled={page === 1}
-                  className='p-2 px-3 text-white d-inline-flex border-1 rounded-2'
-                  style={{
-                    backgroundColor: '#001C79',
-                  }}
+
+            {/* Pagination Section */}
+            <div className="text-center my-4 d-flex flex-row justify-content-center">
+              {currentPage > 1 && (
+                <i class="bi bi-arrow-left-circle-fill fs-2"
+                  onClick={() => handlePageChange(currentPage - 1)}
                 >
-                  Previous
+                </i>
+              )}
+
+              <div className='d-flex flex-column justify-content-center'>
+                <p className="mx-4 mb-0">
+                  Page {currentPage} of {totalPages}
                 </p>
-              </Col>
-              {[...Array(totalPages).keys()].map((pageNumber) => (
-                // Display only a subset of page numbers around the current page
-                (pageNumber + 1 >= page - neighboringPages && pageNumber + 1 <= page + neighboringPages) && (
-                  <Col key={pageNumber + 1} className='mb-3 mt-5'>
-                    <p
-                      onClick={() => handlePageChange(pageNumber + 1)}
-                      className={`p-2 px-3 text-white d-inline-flex border-1 rounded-2 ${
-                        pageNumber + 1 === page ? "style{{backgroundColor: '#001C79'}}" : 'bg-secondary'
-                      }`}
-                      style={{
-                        backgroundColor: '#001C79',
-                        cursor: 'pointer',
-                      }}
-                    >
-                      {pageNumber + 1}
-                    </p>
-                  </Col>
-                )
-              ))}
-              <Col className='mb-3 mt-5'>
-                <p
-                  onClick={handleNextPage}
-                  className='p-2 px-4 text-white d-inline-flex border-1 rounded-2'
-                  style={{
-                    backgroundColor: '#001C79',
-                  }}
+              </div>
+              {currentPage < totalPages && (
+                <i class="bi bi-arrow-right-circle-fill fs-2"
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
                 >
-                  Next
-                </p>
-              </Col>
-            </Row>
+                </i>
+              )}
+            </div>
           </Col>
         </Container>
       </Container>

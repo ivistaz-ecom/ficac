@@ -28,10 +28,22 @@ const HomeBanner = () => {
     }
   }, []);
 
+  const backgroundStyles = {
+    height: isMobile ? '280px' : '90vh',
+    fontSize: '50px',
+    width: '100%',
+    backgroundSize: isMobile ? 'cover' : 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: isMobile ? 'center center' : 'initial',
+    backgroundImage: isMobile
+      ? "url('/banner_images/news_archive_banner.jpg')"
+      : "url('/banner_images/news_archive_banner.jpg')",
+  };
+
 
   return (
     <Container fluid className='px-5 '>
-      <Container fluid style={{ backgroundImage: 'url(/news_archive_banner.png)', height: '750px', backgroundSize: 'cover' }}>
+      <Container fluid style={backgroundStyles}>
       </Container>
     </Container>
   );

@@ -18,7 +18,8 @@ const Post = ({ slug }) => {
 
     const fetchData = async () => {
         try {
-            const res = await fetch(`${configData.SERVER_URL}events_gallery?slug=${slug}`);
+            // const res = await fetch(`${configData.SERVER_URL}events_gallery?categories=27?slug=${slug}`);
+            const res = await fetch(`${configData.SERVER_URL}events_gallery?categories=27&slug=${slug}`);
             if (!res.ok) {
                 throw new Error(`Failed to fetch data. Status: ${res.status}`);
             }
