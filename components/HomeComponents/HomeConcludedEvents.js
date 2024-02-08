@@ -44,6 +44,28 @@ const HomeConcludedEvents = () => {
   return (
     <>
       <Container>
+        <style>
+          {`
+          .react-multi-carousel-list {
+            display: flex;
+            align-items: center !important;
+            overflow: hidden;
+            position: relative;
+            flex-direction: column;
+          }
+          @media (max-width: 768px) {
+            .react-multi-carousel-list {
+              display: flex;
+              align-items: center !important;
+              overflow: hidden;
+              position: relative;
+              flex-direction: column;
+              padding: 0px !important;
+              flex-wrap: wrap !important;
+              justify-content: center !important;
+            }
+        `}
+        </style>
         <h3 className="fs-1 txt-blue text-center py-5">
           Concluded Events
         </h3>

@@ -44,7 +44,7 @@ const HomeUpcomingEvents = () => {
 
   return (
     <>
-      <Container fluid className='wbg-light p-4'>
+      <Container fluid className='wbg-light p-4 px-2'>
         <Container>
 
           <style>
