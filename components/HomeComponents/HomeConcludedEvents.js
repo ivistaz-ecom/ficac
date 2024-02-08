@@ -26,7 +26,7 @@ const HomeConcludedEvents = () => {
   }, []);
 
 
-  const responsive = {
+  const responsive1 = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 3,
@@ -41,68 +41,69 @@ const HomeConcludedEvents = () => {
     },
   };
 
-  const responsive1 = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 2,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
-
   return (
-    <Col lg={8} className="g-0">
-      <h3 className="fs-1 txt-blue text-center py-5">Concluded Events</h3>
-      <Carousel
-        swipeable={true}
-        draggable={false}
-        showDots={false}
-        responsive={responsive1}
-        ssr={true}
-        infinite={false}
-        autoPlaySpeed={1500}
-        keyBoardControl={true}
-        customTransition="all .5"
-        transitionDuration={1000}
-        containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "desktop"]}
-        showArrows={false}
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-40-px"
+    <>
+      <Container>
+        <h3 className="fs-1 txt-blue text-center py-5">
+          Concluded Events
+        </h3>
 
-      >
-        {isData.map((post) => (
-          <div
-            key={post.id}
+        <Col className="g-0">
+          <Carousel
+            swipeable={true}
+            draggable={false}
+            showDots={false}
+            responsive={responsive1}
+            ssr={true}
+            infinite={false}
+            autoPlaySpeed={1500}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={1000}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "desktop"]}
+            showArrows={false}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+
           >
-            <Col className="p-0 m-2 mt-0" >
-              <div class="card border-0">
-                <Image
-                  src={post._embedded["wp:featuredmedia"][0].source_url}
-                  width={300}
-                  height={300}
-                  className="w-100 h-auto card-img-top"
-                  alt=""
-                />
-                <div class="card-body text-center">
-                  <h5 class="card-title txt-dark fw-400 text-start mh-104" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-                  <p class="card-text fs-5 fw-300 text-start p-3">FICAC, the World Federation of Consuls had its 1st Latin America Conference in San Pedro Sula, Honduras, from August 31st, 2023- September 3rd 2023, which was organized by the Association Consular Corps of San Pedro Sula.</p>
-                  {/* <p class="card-text fs-5 fw-300 text-start p-3">
-                    {post.acf.excerpt}
-                  </p> */}
-                  <Link href={post.acf.url} class="btn wbg-blue py-2 px-3 m-2 text-white btn-primary border-0" target="_blank">Read More</Link>
-                </div>
-              </div></Col>
-          </div>
-        ))}
-      </Carousel>
-    </Col>
+            {isData.map((post) => (
+              <div
+                key={post.id}
+              >
+                <Col className="p-0 m-2 mt-0" >
+                  <div class="card border-0">
+                    <Image
+                      src={post._embedded["wp:featuredmedia"][0].source_url}
+                      width={300}
+                      height={300}
+                      className="w-100 h-auto card-img-top"
+                      alt=""
+                    />
+                    <div class="card-body text-center">
+                      {post.title.rendered && (
+                        <h5 class="card-title txt-dark fw-400 text-start mh-104" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+                      )}
+                      {/* <p class="card-text fs-5 fw-300 text-start p-3">FICAC, the World Federation of Consuls had its 1st Latin America Conference in San Pedro Sula, Honduras, from August 31st, 2023- September 3rd 2023, which was organized by the Association Consular Corps of San Pedro Sula.</p> */}
+                      {post.acf.excerpt && (
+                        <p class="card-text fs-5 fw-300 text-start p-3" dangerouslySetInnerHTML={{ __html: post.acf.excerpt }}>
+
+                        </p>
+                      )}
+                      {post.acf.url && (
+                        <Link href={post.acf.url} class="btn wbg-blue py-2 px-3 m-2 text-white btn-primary border-0" target="_blank">
+                          Read More
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </Col>
+              </div>
+            ))}
+          </Carousel>
+        </Col>
+      </Container>
+    </>
   );
 };
 

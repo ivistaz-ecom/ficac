@@ -54,7 +54,7 @@ const EventGalleryLists = () => {
             </Container>
 
             {/* Events Archive */}
-            <Container className='mt-5'>
+            {/* <Container className='mt-5'>
                 <Row>
                     <Col className='d-flex justify-content-center mb-4  d-inline-flex gap-1'   >
                         <Link href="/event-archive"
@@ -74,7 +74,7 @@ const EventGalleryLists = () => {
                         </Link>
                     </Col>
                 </Row>
-            </Container>
+            </Container> */}
 
         </>
 

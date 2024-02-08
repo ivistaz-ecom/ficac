@@ -1,10 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Image, Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
 import GalleryPopup from '../components/GalleryPopup'; // Adjust the path based on your project structure
-import configData from "../config.json";
-import Image from 'next/image'
 
 const Post = ({ slug }) => {
 
@@ -18,8 +16,7 @@ const Post = ({ slug }) => {
 
     const fetchData = async () => {
         try {
-            // const res = await fetch(`${configData.SERVER_URL}events_gallery?categories=27?slug=${slug}`);
-            const res = await fetch(`${configData.SERVER_URL}events_gallery?categories=27&slug=${slug}`);
+            const res = await fetch(`https://beta.ficacworld.org/wp-json/wp/v2/events_gallery?slug=${slug}`);
             if (!res.ok) {
                 throw new Error(`Failed to fetch data. Status: ${res.status}`);
             }
@@ -297,11 +294,11 @@ const Post = ({ slug }) => {
                                                             <Image
                                                                 src={photo.full_image_url}
                                                                 alt=""
-                                                                width={280}
-                                                                height={280}
-                                                                className="w-100 cursor-pointer"
+                                                                width="100%"
+                                                                height={212}
                                                                 style={{ objectFit: 'cover', objectPosition: 'center center' }}
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_1', '0')}
+                                                                className='cursor-pointer'
                                                             />
                                                         </Col>
 
@@ -309,9 +306,7 @@ const Post = ({ slug }) => {
                                                             <Image
                                                                 src={photo.full_image_url}
                                                                 alt=""
-                                                                width={280}
-                                                                height={280}
-                                                                className="w-100 h-auto cursor-pointer"
+                                                                width="100%"
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_1', '0')}
                                                             />
                                                         </Col>
@@ -340,14 +335,14 @@ const Post = ({ slug }) => {
                                                             <Image
                                                                 src={photo.full_image_url}
                                                                 alt=""
-                                                                width={280}
-                                                                height={280}
-                                                                className="w-100 h-auto cursor-pointer"
+                                                                width="100%"
+                                                                height={212}
                                                                 style={{
                                                                     objectFit: 'cover',
                                                                     objectPosition: 'center center'
                                                                 }}
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_2', '1')}
+                                                                className='cursor-pointer'
                                                             />
                                                         </Col>
 
@@ -355,9 +350,7 @@ const Post = ({ slug }) => {
                                                             <Image
                                                                 src={photo.full_image_url}
                                                                 alt=""
-                                                                width={280}
-                                                                height={280}
-                                                                className="w-100 h-auto cursor-pointer"
+                                                                width="100%"
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_2', '1')}
                                                             />
                                                         </Col>
@@ -365,6 +358,7 @@ const Post = ({ slug }) => {
                                                 ))}
                                             </Row>
                                         </Col>
+
 
                                         <Col className="pt-5 mb-4">
                                             {/* <h1 className="fw-bold" dangerouslySetInnerHTML={{ __html: post.title.rendered }} /> */}
@@ -385,12 +379,12 @@ const Post = ({ slug }) => {
                                                             <Image
                                                                 src={photo.full_image_url}
                                                                 alt=""
-                                                                width={280}
-                                                                height={280}
-                                                                className="w-100 h-auto cursor-pointer"
+                                                                width="100%"
+                                                                height={212}
                                                                 style={{ objectFit: 'cover', objectPosition: 'center center' }}
                                                                 // onClick={() => openSelectedImage(photo, index)}
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_3', '2')}
+                                                                className='cursor-pointer'
                                                             />
                                                         </Col>
 
@@ -398,9 +392,7 @@ const Post = ({ slug }) => {
                                                             <Image
                                                                 src={photo.full_image_url}
                                                                 alt=""
-                                                                width={280}
-                                                                height={280}
-                                                                className="w-100 h-auto cursor-pointer"
+                                                                width="100%"
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_3', '2')}
                                                             />
                                                         </Col>
@@ -428,12 +420,11 @@ const Post = ({ slug }) => {
                                                             <Image
                                                                 src={photo.full_image_url}
                                                                 alt=""
-                                                                width={280}
-                                                                height={280}
-                                                                className="w-100 h-auto cursor-pointer"
+                                                                width="100%"
+                                                                height={212}
                                                                 style={{ objectFit: 'cover', objectPosition: 'center center' }}
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_4', '3')}
-
+                                                                className='cursor-pointer'
                                                             />
                                                         </Col>
 
@@ -441,9 +432,7 @@ const Post = ({ slug }) => {
                                                             <Image
                                                                 src={photo.full_image_url}
                                                                 alt=""
-                                                                width={280}
-                                                                height={280}
-                                                                className="w-100 h-auto cursor-pointer"
+                                                                width="100%"
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_4', '3')}
                                                             />
                                                         </Col>
@@ -471,12 +460,11 @@ const Post = ({ slug }) => {
                                                             <Image
                                                                 src={photo.full_image_url}
                                                                 alt=""
-                                                                width={280}
-                                                                height={280}
-                                                                className="w-100 h-auto cursor-pointer"
+                                                                width="100%"
+                                                                height={212}
                                                                 style={{ objectFit: 'cover', objectPosition: 'center center' }}
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_5', '4')}
-
+                                                                className='cursor-pointer'
                                                             />
                                                         </Col>
 
@@ -484,9 +472,7 @@ const Post = ({ slug }) => {
                                                             <Image
                                                                 src={photo.full_image_url}
                                                                 alt=""
-                                                                width={280}
-                                                                height={280}
-                                                                className="w-100 h-auto cursor-pointer"
+                                                                width="100%"
                                                                 onClick={() => openSelectedImage(photo, index, 'gallery_5', '4')}
                                                             />
                                                         </Col>
@@ -523,12 +509,11 @@ const Post = ({ slug }) => {
                                                         <Image
                                                             src={photo.full_image_url}
                                                             alt=""
-                                                            width={280}
-                                                            height={280}
-                                                            className="w-100 h-auto cursor-pointer"
+                                                            width="100%"
+                                                            height={212}
                                                             style={{ objectFit: 'cover', objectPosition: 'center center' }}
                                                             onClick={() => openSelectedImage(photo, index)}
-
+                                                            className='cursor-pointer'
                                                         />
                                                     </Col>
 
@@ -536,9 +521,7 @@ const Post = ({ slug }) => {
                                                         <Image
                                                             src={photo.full_image_url}
                                                             alt=""
-                                                            width={280}
-                                                            height={280}
-                                                            className="w-100 h-auto cursor-pointer"
+                                                            width="100%"
                                                             onClick={() => openSelectedImage(photo, index)}
                                                         />
                                                     </Col>

@@ -9,7 +9,7 @@ const HomeBannerContent = () => {
                <Container className='p-0'>
                     <Col className='wbg-dark p-4 mt-n1' lg={8} sm={12}>
                          <h1 className='mb-0 bfs-1 text-white'>
-                              Membership<br className='lh-1' />Procedure 2023
+                              Membership<br className='lh-1' />Procedure
                          </h1>
                          <p className='fs-1 fw-500 text-white'> FICAC Member<br />Corps/Associations</p>
                     </Col>
@@ -66,9 +66,15 @@ const HomeBannerContent = () => {
                     <p className='fs-5 fw-200'>The Secretary General of FICAC would normally acknowledge receipt of an application and subsequently informs the applying Organization about the decision of the Board of Directors for provisional membership and also about the decision of the General Assembly Meeting.</p>
                </Container>
                <Container className='mb-4'>
-                    <h4 className='txt-dark fw-600 fs-3'>Application Form Membership 2023</h4>
+                    <h4 className='txt-dark fw-600 fs-3'>Application Form Membership</h4>
                     <p className='fs-5 fw-200'>If you wish to become a Member of FICAC aisbl, please complete the Application Form below.</p>
-                    <Link href="/Application-Form-Membership-2019.pdf" target='_blank' className='btn btn-primary px-3 py-2 fs-5 wbg-blue border-0'>Download form</Link>
+                    <Link
+                         href="/Application-Form-Membership-2019.pdf"
+                         target='_blank'
+                         className='btn btn-primary px-3 py-2 fs-5 wbg-blue border-0'
+                    >
+                         Download Form
+                    </Link>
 
                </Container>
           </Container>

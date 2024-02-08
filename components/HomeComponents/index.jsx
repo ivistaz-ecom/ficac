@@ -21,7 +21,7 @@ const index = () => {
       <HomeBannerContent />
       <HomeIntroComponent />
       <HomeUpcomingEvents />
-      {/* <HomeConcludedEvents /> */}
+      <HomeConcludedEvents />
       <HomeLatestHighlights />
       <HomeLatestNews />
       <HomeOrganisation />
