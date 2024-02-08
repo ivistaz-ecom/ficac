@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import configData from '../../../config.json';
-import { Col, Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import Image from 'next/image';
 
 const EventArchiveGallery = ({ slug }) => {
@@ -11,7 +11,7 @@ const EventArchiveGallery = ({ slug }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch(`${configData.SERVER_URL}events_gallery?categories=27&slug=${slug}`);
+                const res = await fetch(`${configData.SERVER_URL}events_archive?slug=${slug}&_embed`);
                 if (!res.ok) {
                     throw new Error(`Failed to fetch data. Status: ${res.status}`);
                 }
@@ -34,15 +34,22 @@ const EventArchiveGallery = ({ slug }) => {
 
     return (
         <Container>
-            <Col>
-                {data.map((post) => (
-                    <div key={post.id}>
-                        {/* <Image key={index} src={image.url} alt={image.alt} width={200} height={200} /> */}
-                        {post.acf.photo_gallery[0]}
-                    </div>
+
+            <Row className='d-flex flex-lg-row flex-column flex-wrap'>
+                {data.acf.photo_gallery.gallery_1[0].map((photo, index) => (
+                    <Col key={index} md={3}>
+                        <Image
+                            src={photo.full_image_url}
+                            alt=""
+                            width={300}
+                            height={200}
+                            style={{ objectFit: 'cover' }}
+                        />
+                    </Col>
                 ))}
-            </Col>
-        </Container>
+            </Row>
+
+        </Container >
     );
 };
 

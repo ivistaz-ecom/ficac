@@ -1,11 +1,11 @@
 import React from 'react'
 import Posts from './posts'
 
-const page = ({params}) => {
+const page = ({ params }) => {
   return (
- <>
- <Posts slug={params.slug} />
- </>
+    <>
+      <Posts slug={params.slug} />
+    </>
   )
 }
 

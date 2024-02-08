@@ -13,7 +13,7 @@ const GalleryPopup = ({ selectedImage, closeSelectedImage, handlePreviousImage, 
             </p>
 
             <span
-                className='position-absolute top-0 bottom-0 end-0 start-0 bg-black bg-opacity-50'
+                className='position-absolute top-0 bottom-0 end-0 start-0 bg-black bg-opacity-75'
                 onClick={closeSelectedImage}
             >
             </span>

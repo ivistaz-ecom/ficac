@@ -9,7 +9,7 @@ const EventArchiveList = () => {
 
     const [data, setData] = useState([]);
 
-    const Acf_URL = `${configData.SERVER_URL}events_gallery?categories=27&_embed`;
+    const Acf_URL = `${configData.SERVER_URL}events_archive?_embed`;
 
     const fetchPosts = async () => {
         try {
@@ -46,12 +46,17 @@ const EventArchiveList = () => {
                                 </div>
                             </div>
                             <div class="col-md-2 justify-content-center align-self-center text-center">
-                                {/* <Link href={`/event-archive/${item.slug}`} className='btn btn-primary border-0 px-3 py-2 fs-5 fw-300' style={{ backgroundColor: '#001CAA' }}>View Photos</Link> */}
-                                <Link href="" className='btn btn-primary border-0 px-3 py-2 fs-5 fw-300' style={{ backgroundColor: '#001CAA' }}>View Photos</Link>
+                                <Link
+                                    href={`/event-archive/${item.slug}`}
+                                    className='btn btn-primary border-0 px-3 py-2 fs-5 fw-300'
+                                    style={{ backgroundColor: '#001CAA' }}
+                                >
+                                    View Photos
+                                </Link>
+                                {/* <Link href="" className='btn btn-primary border-0 px-3 py-2 fs-5 fw-300' style={{ backgroundColor: '#001CAA' }}>View Photos</Link> */}
                             </div>
                         </div>
                     </div>
-
                 ))}
             </Container>
         </>

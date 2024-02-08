@@ -80,6 +80,14 @@ line-height: 1.3em;
   background: #001C79;
 }
 
+.wbg {
+  background: #001C79;
+}
+
+.wbg-txt {
+  color: #001C79;
+}
+
 .navbar-collapse {
   flex-basis: unset !important; 
   flex-grow: 0 !important;
