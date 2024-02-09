@@ -12,7 +12,7 @@ const NewsList = () => {
 
   const fetchData = async () => {
     try {
-      let result = await fetch(`${configData.SERVER_URL}posts?categories=1&_embed&per_page=15`);
+      let result = await fetch(`${configData.SERVER_URL}posts?categories=1&productions=${configData.SERVER}&_embed&per_page=15`);
       if (!result.ok) {
         throw new Error(`HTTP error! Status: ${result.status}`);
       }

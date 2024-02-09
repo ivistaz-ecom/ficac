@@ -7,7 +7,7 @@ import configData from "../../config.json";
 const EventGalleryLists = () => {
     const [data, setData] = useState([]);
 
-    const Acf_URL = `${configData.SERVER_URL}events_gallery?_embed`;
+    const Acf_URL = `${configData.SERVER_URL}events_gallery?productions=${configData.SERVER}&_embed`;
 
     const fetchPosts = async () => {
         try {

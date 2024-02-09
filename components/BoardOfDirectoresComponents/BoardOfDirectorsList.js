@@ -12,7 +12,7 @@ const BoardOfDirectorsList = () => {
 
   const fetchData = async () => {
     try {
-      const result = await fetch(`${configData.SERVER_URL}directors?categories=10&per_page=20&_embed`);
+      const result = await fetch(`${configData.SERVER_URL}directors?categories=10&productions=${configData.SERVER}&per_page=20&_embed`);
       const jsonData = await result.json();
       setData(jsonData);
     } catch (error) {

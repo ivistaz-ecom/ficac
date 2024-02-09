@@ -12,7 +12,7 @@ const HomeUpcomingEvents = () => {
   const fetchData = async () => {
     try {
       // let result = await fetch(`https://ficac.ivistaz.co/wp-json/wp/v2/directors?_embed&per_page=100`);
-      let result = await fetch(`${configData.SERVER_URL}posts?categories=14&_embed`);
+      let result = await fetch(`${configData.SERVER_URL}posts?categories=14&productions=${configData.SERVER}&_embed`);
       result = await result.json();
       setIsData(result);
       // console.log(result);

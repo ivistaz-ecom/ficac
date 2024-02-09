@@ -9,7 +9,7 @@ const EventArchiveList = () => {
 
     const [data, setData] = useState([]);
 
-    const Acf_URL = `${configData.SERVER_URL}events_archive?_embed`;
+    const Acf_URL = `${configData.SERVER_URL}events_archive?productions=${configData.SERVER}&_embed`;
 
     const fetchPosts = async () => {
         try {
