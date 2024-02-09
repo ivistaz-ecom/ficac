@@ -27,7 +27,7 @@ function NavBar() {
       // Apply styles to the collapsed menu based on the scroll state
       if (navbarCollapse) {
         navbarCollapse.style.backgroundColor = isScrolled ? '#001C79' : 'transparent ';
-        navbarCollapse.style.padding = isScrolled ? '10px' : '0'; // Add padding when scrolled
+        navbarCollapse.style.padding = isScrolled ? '0px' : '0'; // Add padding when scrolled
         // Add other styles as needed
       }
     };
@@ -85,14 +85,31 @@ function NavBar() {
                         <li><Link class={pathname == "/news-archive" ? "active dropdown-item" : "dropdown-item"} href="/news-archive">News Archive</Link></li>
                       </ul>
                     </li> */}
+                    {/* <Link
+                      class={`${pathname == "/about" && scrolled ? "active dropdown-toggle" : "nav-link dropdown-toggle"}`}
+                      href="/about"
+                      id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      About
+                    </Link> */}
                     <li class="nav-item">
-                      <Link class={pathname == "/news" ? "active-menu nav-link poppins" : "nav-link poppins"} href="/news" >FICAC News</Link>
+                      <Link
+                        class={pathname == "/news" ? "active-menu nav-link poppins" : "nav-link poppins"}
+                        style={pathname == "/news" && scrolled ? { borderBottom: '2px solid white' } : {}}
+                        href="/news">
+                        FICAC News
+                      </Link>
                     </li>
                     <li class="nav-item">
-                      <Link class={pathname == "/membership" ? "active-menu nav-link poppins" : "nav-link poppins"} href="/membership"  >Membership</Link>
+                      <Link
+                        class={pathname == "/membership" ? "active-menu nav-link poppins" : "nav-link poppins"}
+                        style={pathname == "/membership" && scrolled ? { borderBottom: '2px solid white' } : {}}
+                        href="/membership"  >Membership</Link>
                     </li>
                     <li class="nav-item">
-                      <Link class={pathname == "/contact" ? "active-menu nav-link poppins" : "nav-link poppins"} href="/contact" >Contact Us</Link>
+                      <Link
+                        class={pathname == "/contact" ? "active-menu nav-link poppins" : "nav-link poppins"}
+                        style={pathname == "/contact" && scrolled ? { borderBottom: '2px solid white' } : {}}
+                        href="/contact" >Contact Us</Link>
                     </li>
                   </ul>
                   <div class="d-flex mx-4" style={{ cursor: 'pointer' }}>
