@@ -109,7 +109,6 @@ const HomeConcludedEvents = () => {
                       {/* <p class="card-text fs-5 fw-300 text-start p-3">FICAC, the World Federation of Consuls had its 1st Latin America Conference in San Pedro Sula, Honduras, from August 31st, 2023- September 3rd 2023, which was organized by the Association Consular Corps of San Pedro Sula.</p> */}
                       {post.acf.excerpt && (
                         <p class="card-text fs-5 fw-300 text-start p-3" dangerouslySetInnerHTML={{ __html: post.acf.excerpt }}>
-
                         </p>
                       )}
                       {post.acf.url && (
