@@ -36,7 +36,7 @@ const HomeLatestNews = () => {
       let result = await fetch(`${configData.SERVER_URL}posts?categories=11&productions=${configData.SERVER}&_embed`);
       result = await result.json();
       setIsData(result);
-      console.log(result)
+      // console.log(result)
     } catch {
       // console.log('Error fetching data');
     }
