@@ -35,7 +35,7 @@ const CentralCommittiees = () => {
       }
       const postsData = await result.json();
       setPosts(postsData);
-      console.log(postsData)
+      // console.log(postsData);
     } catch (error) {
       console.error("Error fetching posts", error);
     }
