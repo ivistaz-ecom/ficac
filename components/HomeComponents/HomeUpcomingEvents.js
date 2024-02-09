@@ -12,7 +12,7 @@ const HomeUpcomingEvents = () => {
   const fetchData = async () => {
     try {
       // let result = await fetch(`https://ficac.ivistaz.co/wp-json/wp/v2/directors?_embed&per_page=100`);
-      let result = await fetch(`${configData.SERVER_URL}posts?categories=14&_embed`);
+      let result = await fetch(`${configData.SERVER_URL}posts?categories=14&productions=${configData.SERVER}&_embed`);
       result = await result.json();
       setIsData(result);
       // console.log(result);
@@ -88,7 +88,7 @@ const HomeUpcomingEvents = () => {
                   >
                     <div class="card border-0">
 
-                      {/* {post._embedded["wp:featuredmedia"] && post._embedded["wp:featuredmedia"][0] && post._embedded["wp:featuredmedia"][0].source_url && (
+                      {post._embedded["wp:featuredmedia"] && post._embedded["wp:featuredmedia"][0] && post._embedded["wp:featuredmedia"][0].source_url && (
                         <Image
                           src={post._embedded["wp:featuredmedia"][0].source_url}
                           alt=''
@@ -96,24 +96,24 @@ const HomeUpcomingEvents = () => {
                           height={300}
                           className="w-100 h-auto card-img-top"
                         />
-                      )} */}
+                      )}
 
-                      <Image
+                      {/* <Image
                         src="/upcoming-events/south_east.jpeg"
                         alt=''
                         width={300}
                         height={300}
                         className="w-100 h-auto card-img-top"
-                      />
+                      /> */}
 
                       {/* <h5 class="card-title txt-dark fw-400 text-start mh-104" dangerouslySetInnerHTML={{ __html: post.title.rendered }}/> */}
-                      {/* {post.acf.excerpt && (
+                      {post.acf.excerpt && (
                         <div class="text-center">
                           <p class="card-text fs-6 fw-300 py-4">
                             {post.acf.excerpt}
                           </p>
                         </div>
-                      )} */}
+                      )}
 
                       <div>
                         {post.content.rendered && (

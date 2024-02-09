@@ -29,7 +29,7 @@ const CentralCommittiees = () => {
 
   const fetchPosts = async () => {
     try {
-      const result = await fetch(`${configData.SERVER_URL}committiee?categories=7&per_page=20&_embed`);
+      const result = await fetch(`${configData.SERVER_URL}committiee?categories=7&productions=${configData.SERVER}&per_page=20&_embed`);
       if (!result.ok) {
         throw new Error(`HTTP error! Status: ${result.status}`);
       }

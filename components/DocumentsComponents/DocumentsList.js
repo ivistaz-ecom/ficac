@@ -12,7 +12,7 @@ const DocumentsList = () => {
 
     const fetchData = async () => {
         try {
-            let result = await fetch(`${configData.SERVER_URL}documents?_embed`);
+            let result = await fetch(`${configData.SERVER_URL}documents?productions=${configData.SERVER}&_embed`);
 
             result = await result.json();
             setData(result);

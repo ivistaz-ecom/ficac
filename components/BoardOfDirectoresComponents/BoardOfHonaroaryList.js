@@ -10,7 +10,7 @@ const BoardOfHonoraryList = () => {
 
   const fetchPosts = async () => {
     try {
-      const result = await fetch(`${configData.SERVER_URL}directors?categories=9&per_page=100&_embed`);
+      const result = await fetch(`${configData.SERVER_URL}directors?categories=9&productions=${configData.SERVER}&per_page=100&_embed`);
       if (!result.ok) {
         throw new Error(`HTTP error! Status: ${result.status}`);
       }

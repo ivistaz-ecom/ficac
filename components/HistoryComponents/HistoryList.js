@@ -10,7 +10,7 @@ const HistoryList = () => {
 
   const fetchData = async () => {
     try {
-      let result = await fetch(`${configData.SERVER_URL}history?_embed&per_page=20`);
+      let result = await fetch(`${configData.SERVER_URL}history?productions=${configData.SERVER}&per_page=20&_embed`);
 
       result = await result.json();
       setData(result);
