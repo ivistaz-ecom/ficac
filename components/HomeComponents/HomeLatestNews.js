@@ -38,7 +38,7 @@ const HomeLatestNews = () => {
       setIsData(result);
       // console.log(result)
     } catch {
-      // console.log('Error fetching data');
+      console.log('Error fetching data');
     }
   }
 
