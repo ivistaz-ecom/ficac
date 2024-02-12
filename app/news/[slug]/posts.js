@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Container, Button } from 'react-bootstrap';
 import Link from 'next/link';
 import Footer from '../../../components/Shared/Footer'
+import configData from "../../../config.json";
 
 const Posts = ({ slug }) => {
 
@@ -11,7 +12,7 @@ const Posts = ({ slug }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://beta.ficacworld.org/wp-json/wp/v2/posts?slug=${slug}`);
+        const res = await fetch(`${configData.SERVER_URL}posts?slug=${slug}`);
         if (!res.ok) {
           throw new Error(`Failed to fetch data. Status: ${res.status}`);
         }
@@ -39,34 +40,20 @@ const Posts = ({ slug }) => {
       >
         {data.map((post) => (
           <div key={post.id}
-            className='px-lg-3 shadow-sm col-lg-12 position-relative'
-          >
+            className='px-lg-3 col-lg-12 position-relative'>
             <div className='pt-5'>
-              <div
-                style={{ fontSize: "25px", fontWeight: "bold", color: "#741B1B" }}
-              >
-                <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-                >
-                </h1>
-              </div>
+                <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} className='fs-1 txt-dark'/>
             </div>
             <div>
-              <hr></hr>
+              <hr/>
             </div>
 
             <div
-              className='py-4'
+              className='py-4 fs-5 fw-300'
               dangerouslySetInnerHTML={{ __html: post.content.rendered }}
             />
             <div className='py-4'>
-              <Link href="/news">
-                <Button
-                  className='rounded-2 py-2 px-3 px-lg-2 d-inline-block text-white'
-                  style={{ backgroundColor: "#001C79" }}
-                >
-                  Go Back
-                </Button>
-              </Link>
+              <Link href="/news" className='btn wbg-blue py-2 px-3 m-2 text-white btn-primary border-0'>Go Back</Link>
             </div>
           </div>
         ))}
