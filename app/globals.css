@@ -8,15 +8,8 @@
   font-family: 'Poppins', sans-serif;
 }
   body {
-    /* background: #E4E8F5; */
     background: #F7F9FF;
   }
-
-  /* @media(min-width:1560px){
-    .container {
-      width: 100% !important;
-    }
- } */
 .fw-100{
   font-weight: 100;
 }
