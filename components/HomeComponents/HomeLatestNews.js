@@ -101,7 +101,7 @@ const HomeLatestNews = () => {
                     <h5 class="card-title" dangerouslySetInnerHTML={{ __html: news.title.rendered }} />
                     <p class="card-text fs-6 fw-200" dangerouslySetInnerHTML={{ __html: news.acf.excerpt }} />
                     <div className='text-center'>
-                      <Link className="text-decoration-none btn-latest-news txt-blue py-2 px-3 rounded-2 text-center" target='_blank' href={`/news/${news.slug}`}>Read More</Link>
+                      <Link className="text-decoration-none btn-latest-news txt-blue py-2 px-3 rounded-2 text-center border-0" target='_blank' href={`/news/${news.slug}`}>Read More</Link>
                     </div>
                   </div>
                 </div>

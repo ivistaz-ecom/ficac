@@ -36,7 +36,8 @@ const NewsList = () => {
             <Col lg={4} className='mt-4 d-flex flex-column' key={index}>
               <Col className='bg-white'>
                 <div class="card text-center border-0" >
-                  <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt={post.title.rendered} width={200} height={100} className='w-100 h-100' />
+                {/* {post._embedded['wp:featuredmedia'][0].source_url} */}
+                  <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt={post.title.rendered} width={336} height={222} className='w-100 h-100' />
                   <div class="card-body h-100">
                     <h5 class="card-title text-start txt-blue fs-4 fw-400" dangerouslySetInnerHTML={{ __html: post.title.rendered }} style={{ minHeight: '120px' }} />
                     {/* <p class="card-text text-start fs-5 fw-300 two-line-paragraph" dangerouslySetInnerHTML={{ __html: post.acf.excerpt }} /> */}
@@ -44,7 +45,9 @@ const NewsList = () => {
                       <p class="card-text text-start fs-5 fw-300 two-line-paragraph"
                         style={{ color: "#001C79" }} dangerouslySetInnerHTML={{ __html: post.acf.excerpt }} />
                     )}
-                    <Link href={`/news/${post.slug}`} target='_blank' className='btn btn-primary wbg-blue border-0 px-3 py-2 mt-3'>Read More</Link>
+                    <Link href={`/news/${post.slug}`} 
+                    // target='_blank'  
+                    className='btn btn-primary wbg-blue border-0 px-3 py-2 mt-3'>Read More</Link>
                   </div>
                 </div>
               </Col>

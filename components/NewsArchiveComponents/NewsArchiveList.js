@@ -1,20 +1,24 @@
 'use client'
-import React, { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { useEffect, useState } from "react";
+import { setLocalStorage, getLocalStorage } from "../../utils/localStorage";
+import { Container, Button, Col } from 'react-bootstrap';
 import Link from 'next/link';
 import configData from "../../config.json";
+import { useRouter } from 'next/router';
 
-const NewsArchiveList = () => {
+
+
+const ExampleComponent = () => {
+  const [count, setCount] = useState(1);
   const [data, setData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-
   const postsPerPage = 15;
 
-  const fetchData = async (page) => {
-    try {
-      let result = await fetch(`${configData.SERVER_URL}posts?categories=16&_embed&page=${page}&per_page=${postsPerPage}`);
 
+  const fetchData = async () => {
+    try {
+      let result = await fetch(`${configData.SERVER_URL}posts?categories=16&_embed&page=${count}&per_page=${postsPerPage}`);
+      console.log(result)
       if (!result.ok) {
         throw new Error(`HTTP error! Status: ${result.status}`);
       }
@@ -29,19 +33,31 @@ const NewsArchiveList = () => {
     }
   };
 
-  const handlePageChange = (newPage) => {
-    setCurrentPage(newPage);
-    fetchData(newPage);
-  };
 
   useEffect(() => {
-    fetchData(currentPage);
-  }, [currentPage]);
+    const storedCount = getLocalStorage("count");
+    if (storedCount !== null) {
+      setCount(storedCount);
+    }
+    fetchData(count);
+  }, [count]);
+
+
+  const handlePageChange = (newPage) => {
+    
+    setCount(newPage);
+    setLocalStorage("count", newPage);
+    
+    
+  };
+
 
 
   return (
     <>
       <Container fluid>
+
+      {/* <p>Count: {count}</p> */}
         <Container>
           <Col className="mt-lg-5">
             {data.map((post, index) => (
@@ -54,11 +70,11 @@ const NewsArchiveList = () => {
                   </p>
                   <Link
                     href={`/news-archive/${post.slug}`}
-                    target="_blank"
                     rel="noopener noreferrer"
                     style={{ textDecoration: 'none' }}
                     className='text-decoration-none text-black'
                   >
+     
                     <p
                       className='fs-5'
                       dangerouslySetInnerHTML={{
@@ -81,22 +97,22 @@ const NewsArchiveList = () => {
 
             {/* Pagination Section */}
             <div className="text-center my-4 d-flex flex-row justify-content-center">
-              {currentPage > 1 && (
-                <i class="bi bi-arrow-left-circle-fill fs-2"
-                  onClick={() => handlePageChange(currentPage - 1)}
+              {count > 1 && (
+                <i className="bi bi-arrow-left-circle-fill fs-2 cursor-pointer"
+                  onClick={() => handlePageChange(count - 1)}
                 >
                 </i>
               )}
 
               <div className='d-flex flex-column justify-content-center'>
                 <p className="mx-4 mb-0">
-                  Page {currentPage} of {totalPages}
+                  Page {count} of {totalPages}
                 </p>
               </div>
-              {currentPage < totalPages && (
-                <i class="bi bi-arrow-right-circle-fill fs-2"
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage === totalPages}
+              {count < totalPages && (
+                <i className="bi bi-arrow-right-circle-fill fs-2 cursor-pointer"
+                  onClick={() => handlePageChange(count + 1)}
+                  disabled={count === totalPages}
                 >
                 </i>
               )}
@@ -108,4 +124,4 @@ const NewsArchiveList = () => {
   );
 };
 
-export default NewsArchiveList;
+export default ExampleComponent;

@@ -126,7 +126,7 @@ const DesktopHeader = () => {
                   >
                     <div>
                       <h6 className="mb-0 text-center position-relative text-white"
-                        style={{ fontSize: "18px" }}
+                        style={{ fontSize: "18px" , color:"white" }}
                       >
                         About
                       </h6>

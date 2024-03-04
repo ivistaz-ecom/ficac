@@ -69,7 +69,7 @@ function NavBar() {
                         <li><Link class={pathname == "/about/executive" ? "active dropdown-item" : "dropdown-item"} href="/about/executive">Leadership</Link></li>
                       </ul>
                     </li>
-                    {/* <li class="nav-item dropdown poppins">
+                    <li class="nav-item dropdown poppins">
                       <Link
                         class={pathname == "" ? "  dropdown-toggle" : "nav-link dropdown-toggle"}
                         href=""
@@ -84,21 +84,21 @@ function NavBar() {
                         </li>
                         <li><Link class={pathname == "/news-archive" ? "active dropdown-item" : "dropdown-item"} href="/news-archive">News Archive</Link></li>
                       </ul>
-                    </li> */}
+                    </li>
                     {/* <Link
                       class={`${pathname == "/about" && scrolled ? "active dropdown-toggle" : "nav-link dropdown-toggle"}`}
                       href="/about"
                       id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       About
                     </Link> */}
-                    <li class="nav-item">
+                    {/* <li class="nav-item">
                       <Link
                         class={pathname == "/news" ? "active-menu nav-link poppins" : "nav-link poppins"}
                         style={pathname == "/news" && scrolled ? { borderBottom: '2px solid white' } : {}}
                         href="/news">
                         FICAC News
                       </Link>
-                    </li>
+                    </li> */}
                     <li class="nav-item">
                       <Link
                         class={pathname == "/membership" ? "active-menu nav-link poppins" : "nav-link poppins"}
@@ -182,8 +182,24 @@ function NavBar() {
 
                 </ul>
               </li>
-              <li class="nav-item">
+              {/* <li class="nav-item">
                 <Link class={pathname == "/news" ? "active nav-link poppins" : "nav-link poppins"} href="/news" >FICAC News</Link>
+              </li> */}
+              <li class="nav-item dropdown poppins">
+                <Link
+                  class={pathname == "" ? "  dropdown-toggle" : "nav-link dropdown-toggle"}
+                  href=""
+                  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  FICAC News
+                </Link>
+                <ul class="dropdown-menu poppins" aria-labelledby="navbarDropdown">
+                  <li>
+                    <Link class={pathname == "/news" ? "active dropdown-item" : "dropdown-item"} href="/news">Latest News</Link></li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li><Link class={pathname == "/news-archive" ? "active dropdown-item" : "dropdown-item"} href="/news-archive">News Archive</Link></li>
+                </ul>
               </li>
               <li class="nav-item">
                 <Link class={pathname == "/membership" ? "active nav-link poppins" : "nav-link poppins"} href="/membership"  >Membership</Link>

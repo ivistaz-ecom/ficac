@@ -18,8 +18,8 @@ jobs:
           password: ${{ secrets.SSH_PASS }} # Your server's SSH password
 
           script: |
-            cd /home/ficacweb/web/ficac2.ficacworld.org/public_html/
+            cd /home/ficacweb/web/staging.ficacworld.org/public_html
             git pull origin main
             npm install
             npm run build
-            pm2 restart ficac
+            pm2 restart ficacstaging

@@ -4,6 +4,7 @@ import { Container, Button } from 'react-bootstrap';
 import Link from 'next/link';
 import Footer from '../../../components/Shared/Footer'
 import configData from "../../../config.json";
+import { IoArrowBackSharp } from "react-icons/io5";
 
 const Posts = ({ slug }) => {
 
@@ -32,20 +33,30 @@ const Posts = ({ slug }) => {
     return <p>Please wait..</p>;
   }
   return (
+    <>
+    
+    <nav class="navbar navbar-light">
+    <div class="container">
+      <Link class="navbar-brand" href="/news">
+        <IoArrowBackSharp size={35} /> Back to News
+      </Link>
+    </div>
+  </nav>
     <div>
       {/* {slug} */}
       {/* <Header /> */}
+  
       <Container
-        className='d-flex flex-row justify-content-center'
+        className='d-flex flex-column align-items-center'
       >
         {data.map((post) => (
           <div key={post.id}
             className='px-lg-3 col-lg-12 position-relative'>
-            <div className='pt-5'>
-                <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} className='fs-1 txt-dark'/>
+            <div className='pt-3'>
+              <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} className='fs-1 txt-dark' />
             </div>
             <div>
-              <hr/>
+              <hr />
             </div>
 
             <div
@@ -58,8 +69,12 @@ const Posts = ({ slug }) => {
           </div>
         ))}
       </Container>
-      <Footer />
+ 
     </div>
+    <Footer />
+    
+    </>
+   
   )
 }
 

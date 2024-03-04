@@ -44,7 +44,7 @@ const HomeUpcomingEvents = () => {
 
   return (
     <>
-      <Container fluid className='wbg-light p-4 px-2'>
+      <Container fluid className='wbg-light p-4 px-2 pb-5'>
         <Container>
 
           <style>
@@ -58,7 +58,7 @@ const HomeUpcomingEvents = () => {
           }
         `}
           </style>
-          <h3 className="fs-1 txt-dark text-center py-5">
+          <h3 className="fs-1 txt-dark text-center py-3">
             Upcoming Events
           </h3>
 

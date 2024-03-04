@@ -7,7 +7,10 @@ import configData from "../../config.json";
 const EventGalleryLists = () => {
     const [data, setData] = useState([]);
 
-    const Acf_URL = `${configData.SERVER_URL}events_gallery?productions=${configData.SERVER}&_embed`;
+    // const Acf_URL = `${configData.SERVER_URL}events_gallery?productions=${configData.SERVER}&_embed`;
+
+    const categoryId = 15; // Your category ID
+    const Acf_URL = `${configData.SERVER_URL}events_gallery?productions=${configData.SERVER}&categories=${categoryId}&_embed`;
 
     const fetchPosts = async () => {
         try {
@@ -34,36 +37,17 @@ const EventGalleryLists = () => {
 
     return (
         <>
-            <Container className='py-3'>
-                {data.map((item, index) => (
-                    <div class="card mb-3 rounded-3 btn-border" key={index}>
-                        <div class="row g-0 p-0 p-3">
-                            <div class="col-md-10">
-                                <div class="card-body">
-                                    <h5 class="card-title fs-5 fw-500" dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
-                                    <p class="card-text fs-6 fw-300" >{item.acf.date}</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2 justify-content-center align-self-center text-center">
-                                <Link href={`/gallery/${item.slug}`} className='btn btn-primary border-0 px-3 py-2 fs-5 fw-300' style={{ backgroundColor: '#001CAA' }}>View Photos</Link>
-                            </div>
-                        </div>
-                    </div>
-
-                ))}
-            </Container>
-
-            {/* Events Archive */}
-            {/* <Container className='mt-5'>
+          {/* Events Archive */}
+          <Container className='mt-5 '>
                 <Row>
-                    <Col className='d-flex justify-content-center mb-4  d-inline-flex gap-1'   >
+                    <Col className='d-flex justify-content-end mb-4  d-inline-flex gap-1'   >
                         <Link href="/event-archive"
                             style={{
                                 textDecoration: "none",
                                 color: "white",
 
                             }}>
-                            <p className='p-2 d-inline-flex rounded-2 '
+                            <p className='px-3 py-2 d-inline-flex rounded-2 '
                                 style={{
                                     backgroundColor: "#001C79",
                                 }}
@@ -74,7 +58,28 @@ const EventGalleryLists = () => {
                         </Link>
                     </Col>
                 </Row>
-            </Container> */}
+            </Container>
+            <Container className='py-3 '>
+                {data.map((item, index) => (
+                    <div class="card mb-3 rounded-3 btn-border event-card" key={index}>
+                        <div class="row g-0 p-0 p-3">
+                            <div class="col-md-10">
+                                <div class="card-body ">
+                                    <h5 class="card-title fs-5 fw-500" dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+                                    <p class="card-text fs-6 fw-300" >{item.acf.date}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 justify-content-center align-self-center text-center ">
+                                <Link href={`/gallery/${item.slug}`} className='btn btn-primary border-0 px-3 py-2 fs-5 fw-300 event-button' style={{ backgroundColor: '#001C79' }}>View Photos</Link>
+                            </div>
+                        </div>
+                        {/* backgroundColor: '#001CAA' */}
+                    </div>
+
+                ))}
+            </Container>
+
+        
 
         </>
 

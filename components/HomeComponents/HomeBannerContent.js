@@ -11,7 +11,7 @@ const HomeBannerContent = () => {
             Bridging the World
           </h1>
           <p className='pt-2 fs-5 lh-13 fw-200 text-white'>
-            FICAC, a global network of Consular Associations was created to support and
+            FICAC, a global network of Consular Associations, was created to support and
             improve the status, legitimacy, and   effectiveness of all consular officers in all receiving States.
           </p>
           <p className='fs-5 lh-13 fw-200 text-white'>

@@ -28,7 +28,7 @@ const HistoryList = () => {
     <Container className="px-0">
       <Row className="d-flex flex-lg-row flex-column mb-4 p-0 m-0">
         {data.map((post, index) => (
-          <Col sm={6} lg={4} className="mt-4 p-2" key={index}>
+          <Col sm={6} lg={3} className="mt-4 p-2 d-flex flex-column align-items-stretch" key={index}>
             <div class="card p-4" >
               <div>
                 <Image
@@ -40,8 +40,8 @@ const HistoryList = () => {
                 />
               </div>
               <div class="card-body">
-                <h5 class="card-title fs-5 fw-200 txt-blue" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-                <p class="card-text fs-5 fw-600 txt-blue" >{post.acf.year}</p>
+                <h5 class="card-title fs-6 fw-200 txt-blue" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+                <p class="card-text fs-6 fw-600 txt-blue" >{post.acf.year}</p>
               </div>
             </div>
           </Col>

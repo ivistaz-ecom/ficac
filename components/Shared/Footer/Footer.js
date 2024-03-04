@@ -28,7 +28,7 @@ const Footer = () => {
 
   return (
     <>
-      <Container fluid className='text-white bottom-0 ' style={footerBg}>
+      <Container fluid className='text-white bottom-0' style={footerBg}>
         <Container className='py-3'>
           <Row className='d-flex flex-lg-row flex-column'>
             <Col className='text-lg-start text-center'>

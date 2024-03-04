@@ -36,13 +36,13 @@ const HomeBanner = () => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: isMobile ? 'center center' : 'initial',
     backgroundImage: isMobile
-      ? "url('/banner_images/news_archive_banner.jpg')"
-      : "url('/banner_images/news_archive_banner.jpg')",
+      ? "url('/banner_images/news-archive.jpg')"
+      : "url('/banner_images/news-archive.jpg')",
   };
 
 
   return (
-    <Container fluid className='px-5 '>
+    <Container fluid className='px-lg-5 p-0'>
       <Container fluid style={backgroundStyles}>
       </Container>
     </Container>
